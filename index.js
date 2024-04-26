@@ -92,8 +92,11 @@ app.post("/weather", async (req, res) =>  {
         //     //argument so you can feed the results of the request() to your render operation.
         //    }); 
         // }); 
+            
+        getGeolocation(sucess);
+         //https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
 
-            function getGeolocation() {
+        function getGeolocation() {
                     return axios.get(GEO_URL, {
                         params: {
                             q: cityAndCountry,
@@ -119,7 +122,7 @@ app.post("/weather", async (req, res) =>  {
                 let ltd = latitude.slice(0, -3);
                 let lng = longitude.slice(0, -3);
                 
-               
+                
                 // let latArray = JSON.parse(req.body.ltd);
                 // let lonArray= JSON.parse(req.body.long);
                 // let lati = latArray[0].lat;

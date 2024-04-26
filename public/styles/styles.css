@@ -4,7 +4,7 @@ html {
 }
 
 .title {
-    color: white;
+    color: #46C2CB;
     width: 30rem;
     margin: auto auto 2rem;
 
@@ -39,6 +39,20 @@ html {
     width: 40rem;
 }
 
+.search {
+    height: 17rem;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    
+}
+
+.search-txt {
+    font-size: 1rem;
+}
+
 .weather-page {
     animation: fadeAndMoveInAnimation ease 3s;
     /* animation-iteration-count: infinite; */
@@ -47,26 +61,28 @@ html {
 
 form {
     margin: auto;
-    width: 40rem;
+    /* width: 40rem; */
+    /* height: 8rem; */
 }
 
 input{
-    border-radius: 2rem;
+    /* border-radius: 2rem; 
+    https://developer.mozilla.org/en-US/docs/Web/CSS/border*/
     height: 3rem;
     width: 30rem;
-    border: none;
+    border: 0.1rem solid #DDDDDD;
     padding: 2rem;
-    font-family: "PT Sans", sans-serif;
     color: rgb(89, 126, 139);
+    font-family: "PT Sans", sans-serif;
     font-size: 1rem;
 
 }
 
 
-.check-btn {
+.search-btn {
     border: none;
-    border-radius: 1rem;
-    width: 8rem;
+    border-radius: 50%;
+    width: 2rem;
     background-image: linear-gradient(45deg, rgb(104, 205, 238), rgba(138, 138, 214, 0.612));
     
     color: rgba(100, 100, 157, 0.612);
@@ -78,10 +94,13 @@ input{
    
     box-shadow:  0.3rem  0.3rem  0.3rem rgb(116, 155, 169);
 }
-.check-btn:hover{
+.search-btn:hover{
     cursor: pointer;
 }
 
+.get-location {
+
+}
 /* input:active {
     border-color: white;
 } */
