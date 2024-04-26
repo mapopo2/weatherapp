@@ -43,6 +43,7 @@ html {
     height: 17rem;
     align-items: center;
     justify-content: center;
+   
     background-color: white;
     border-radius: 0.5rem;
     padding: 1rem;
@@ -63,28 +64,38 @@ form {
     margin: auto;
     /* width: 40rem; */
     /* height: 8rem; */
+   
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    border: 0.1rem solid #DDDDDD;
 }
 
 input{
     /* border-radius: 2rem; 
     https://developer.mozilla.org/en-US/docs/Web/CSS/border*/
+    /* height: 3rem; */
+    width: 19rem;
     height: 3rem;
-    width: 30rem;
-    border: 0.1rem solid #DDDDDD;
-    padding: 2rem;
+    border:none;
+    /* padding: 2rem; */
     color: rgb(89, 126, 139);
     font-family: "PT Sans", sans-serif;
     font-size: 1rem;
+    margin-right: 2rem;
 
 }
-
+/* input:focus{
+    border: none;
+    background-color: white;
+}
+ */
 
 .search-btn {
     border: none;
     border-radius: 50%;
     width: 2rem;
     background-image: linear-gradient(45deg, rgb(104, 205, 238), rgba(138, 138, 214, 0.612));
-    
     color: rgba(100, 100, 157, 0.612);
     padding: 0.5rem;
     font-family: "PT Sans", sans-serif;
@@ -99,7 +110,16 @@ input{
 }
 
 .get-location {
+    height: 3rem;
+    width: 30rem;
+    background-color:#46C2CB ;
+    border:none;
+    font-family: "PT Sans", sans-serif;
+    font-size: 1rem;
+}
 
+.get-location:hover {
+    cursor: pointer;
 }
 /* input:active {
     border-color: white;

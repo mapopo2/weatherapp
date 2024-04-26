@@ -93,7 +93,7 @@ app.post("/weather", async (req, res) =>  {
         //    }); 
         // }); 
             
-        getGeolocation(sucess);
+        // getGeolocation(sucess);
          //https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
 
         function getGeolocation() {
