@@ -1,0 +1,57 @@
+<%- include ("partials/header.ejs");-%>
+    <body>
+
+        <div class="home home-page">
+        <h1 class="title">Check the weather forecast</h1>
+        
+        
+        <form action="/weather" method="POST">
+            <input type="text" name="place" placeholder="e.g. London, GB">
+            <button class="check-btn" name="check">Check!</button>
+        </form>
+        
+        </div>
+
+        <div class="cloud cloud-one"><i class="fa-solid fa-cloud fa-2xl cloudy one" style="color: #dce1ea;"></i></div>
+        <div class="cloud cloud-two"><i class="fa-solid fa-cloud fa-2xl cloudy two" style="color: #dce1ea;"></i></div>
+        <div class="cloud cloud-three"><i class="fa-solid fa-cloud fa-2xl cloudy three" style="color: #dce1ea;"></i></div>
+        <div class="cloud cloud-four"><i class="fa-solid fa-cloud fa-2xl cloudy" style="color: #dce1ea;"></i></div>
+        <div class="cloud cloud-five"><i class="fa-solid fa-cloud fa-2xl cloudy" style="color: #dce1ea;"></i></div>
+       
+
+        <!-- So I'm putting this through version control - will make 2 other versions 
+            to see what it will look like in 2 different styles from the examples I looked at
+
+            Make 2 branches one called dark-plain, version-3?
+        -->
+        <!-- <div class="weather-card">
+        
+                 < if (tZone) {%> 
+                <h2><= JSON.parse(tZone)  %></h2>
+                <h2> <=temp %> °C</h2> 
+                <h2><=humidity %> %</h2>
+                <p><=JSON.parse(description) %></p>
+                JSON.parse(description)
+            
+                <h2><=  sunrise %></h2>
+                <h2><=  sunset %></h2>
+
+        </div> -->
+                 <!-- https://stackoverflow.com/questions/70721356/how-to-display-sunrise-and-sunset-time-in-the-local-time-of-the-city-that-is-bei
+                -->
+                    <!-- <} else {%>
+                        <    let submit = req.body.submit;%>
+                     <  sumbit.on("click", )%>
+                <h1> <=weather%></h1>
+             < }%> -->
+          
+       <!-- i want daily weather and sunrise for whichever location you're at -->
+      
+        <!-- <= weather %> -->
+      
+
+        <%- include("partials/footer.ejs"); -%>
+        
+       
+    </body>
+</html>

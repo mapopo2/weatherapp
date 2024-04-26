@@ -1,0 +1,334 @@
+html {
+    font-family: "PT Sans", sans-serif;
+    background-image: linear-gradient(180deg, rgb(145, 201, 220), rgba(187, 187, 255, 0.726));
+}
+
+.title {
+    color: white;
+    width: 30rem;
+    margin: auto auto 2rem;
+
+}
+
+.home {
+    text-align: center;
+    display: flex;
+    /* display: flex;
+    flex-wrap: nowrap; */
+    width: 80rem;
+    /* min-height: 0; */
+    /* margin: auto; */
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+    /*https://blog.hubspot.com/website/center-div-css*/
+     min-height: 0;
+    
+    
+    /* width: 40rem; min-width: 0; */
+    /* position: relative; */
+}
+
+
+.home-page {
+    display: flex;
+    flex-wrap: wrap;
+    width: 40rem;
+}
+
+.weather-page {
+    animation: fadeAndMoveInAnimation ease 3s;
+    /* animation-iteration-count: infinite; */
+    animation-fill-mode: forwards;
+}
+
+form {
+    margin: auto;
+    width: 40rem;
+}
+
+input{
+    border-radius: 2rem;
+    height: 3rem;
+    width: 30rem;
+    border: none;
+    padding: 2rem;
+    font-family: "PT Sans", sans-serif;
+    color: rgb(89, 126, 139);
+    font-size: 1rem;
+
+}
+
+
+.check-btn {
+    border: none;
+    border-radius: 1rem;
+    width: 8rem;
+    background-image: linear-gradient(45deg, rgb(104, 205, 238), rgba(138, 138, 214, 0.612));
+    
+    color: rgba(100, 100, 157, 0.612);
+    padding: 0.5rem;
+    font-family: "PT Sans", sans-serif;
+    font-size: 1rem;
+
+    font-weight: 600;
+   
+    box-shadow:  0.3rem  0.3rem  0.3rem rgb(116, 155, 169);
+}
+.check-btn:hover{
+    cursor: pointer;
+}
+
+/* input:active {
+    border-color: white;
+} */
+/* .location-change {
+    text-align: center;
+    height: 4rem;
+} */
+.change-location-btn {
+    border: none;
+    background-image: linear-gradient(45deg, rgb(104, 205, 238), rgba(138, 138, 214, 0.612));
+    /* text-align:center; */
+    width: 18rem;
+    height: 3rem;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 0;
+    color: rgba(100, 100, 157, 0.612);
+    font-weight: 600;
+    position: relative;
+    box-shadow:  0.3rem  0.3rem  0.3rem rgb(116, 155, 169);
+    /* top: 0;
+     */
+}
+.change-location-btn:hover {
+    cursor: pointer;
+    transition: top ease 0.5s;
+    top: -0.2rem;
+
+}
+
+/* i {
+    width: 5rem;
+} */
+/* @keyframes btnHoverAnimation{
+    100% 
+} */
+
+.weather-card {
+    background-image: linear-gradient(180deg, rgba(187, 187, 255, 0.612), rgb(145, 201, 220));
+    border-radius: 5rem;
+    box-shadow: 1rem 1rem 2rem rgb(89, 126, 139);
+    width: 25rem;
+    height: 30rem;
+    /* margin: auto auto 2rem; */
+    /* display: flex;
+    flex-wrap: wrap;
+     */
+     align-items: center;
+     justify-content: center;
+    min-height: 0;
+    padding: 2rem;
+    /* animation: fadeAndMoveInAnimation ease 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; */
+}
+.weather-data {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.weather-card-dt-local {
+    /* font-size: 1rem; */
+    text-align: left;
+}
+
+.weather-card-general-weather {
+    width: 10rem;
+    text-align: left;
+
+}
+
+.weather-card-description {
+    width: 13rem;
+    text-align: left;
+}
+
+.next-days-weather {
+    /* background-color: rgb(75, 79, 113); */
+    /* border-radius: 5rem; */
+    /* box-shadow: 1rem 1rem 2rem rgb(89, 126, 139); */
+    
+    width: 50rem;
+    height: 16rem;
+    /* margin: auto auto 2rem; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* left: 50%; */
+   
+    /* flex-direction: row;  transform: translate(0, -50%);*/
+    /* flex-wrap: wrap; */
+    /* min-height: 0; */
+    padding: 2rem;
+    /* text-align: center; */
+    animation: fadeInAnimation ease 12s;
+    /* animation-iteration-count: infinite; */
+    animation-fill-mode: forwards;
+   
+    
+}
+
+.mini-weather-card, .mini-weather-card-description {
+    width: 12rem;
+    margin: auto 2rem;
+}
+/* .mini-weather-card-description {
+    position: absolute;
+    
+    
+    /* align-items: center; */
+
+.mini-weather-card:hover {
+    opacity: 40%;
+}
+
+.items {
+    margin: auto;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.basic-weather {
+    display: flex;
+    flex-grow: 1;
+}
+
+h3 {
+    text-align: left;
+    font-size: 1rem;
+}
+/* 
+.text {
+    
+} */
+/* .weather-text {
+    color: rgba(100, 100, 157, 0.612); 
+} */
+
+.weather {
+    height: 50rem;
+}
+
+.cloud { 
+    width: 5rem;
+    height: 4rem;
+    opacity: 70%;
+}
+@keyframes movingCloudAnimationOne {
+    0% {margin-left: -5rem;
+    } 
+     100% {
+        margin-left: 100rem; }
+     }@keyframes movingCloudAnimationTwo {
+        0% {margin-left: -40rem;
+        } 
+         100% {
+            margin-left: 90rem; }
+         }@keyframes movingCloudAnimationThree {
+            0% {margin-left: -10rem;
+            } 
+             100% {
+                margin-left: 100rem; }
+             }@keyframes movingCloudAnimationFour {
+                0% {margin-left:  -70rem;
+                } 
+                 100% {
+                    margin-left: 90rem; }
+                 }@keyframes movingCloudAnimationFive {
+                    0% {margin-left: -30rem;
+                    } 
+                     100% {
+                        margin-left: 90rem; }
+                     }
+
+           @keyframes fadeInAnimation {
+                0% {opacity: 0;
+                } 
+                 100% {
+                   opacity: 1; }  }     
+         @keyframes fadeAndMoveInAnimation {
+            0% {top: 10rem;
+            } 
+             100% {
+              bottom: 0; }  }    
+                   
+/*                
+@keyframes chngeBtnHover {
+    0% {
+        margin-bottom: 1rem;
+    }
+    100% {margin-bottom: 1rem;}
+}
+                   
+         */
+    
+
+/* 
+.cloud-one, .cloud-two, .cloud-three, .cloud-four, .cloud-five {
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    /* animation-duration: 40s; */
+     
+.cloud-one{
+    animation: movingCloudAnimationOne ease 70s;
+    animation-iteration-count: infinite;
+}
+.cloud-two{
+    animation: movingCloudAnimationTwo ease 70s;
+    animation-iteration-count: infinite;
+}.cloud-three{
+    animation: movingCloudAnimationThree ease 70s;
+    animation-iteration-count: infinite;
+}.cloud-four{
+    animation: movingCloudAnimationFour ease 70s;
+    animation-iteration-count: infinite;
+}.cloud-five{
+    animation: movingCloudAnimationFive ease 70s;
+    animation-iteration-count: infinite;
+}
+
+li {
+    list-style: none;
+}
+
+/* @keyframe{
+
+} */
+/* .cloudy {
+    width: 20rem;
+} */
+/* form {
+    margin: auto;
+    text-align: ;
+} 
+
+There are four different combinators in CSS:
+
+descendant selector (space)
+child selector (>)
+adjacent sibling selector (+)
+general sibling selector (~)
+
+
+
+*/

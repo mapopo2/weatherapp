@@ -1,0 +1,122 @@
+<%- include ("partials/header.ejs");-%>
+    <body>
+
+        <div class="home weather-page">
+        <!-- <h1 class="title"><= JSON.parse(tZone)%></h1> -->
+        <div> Weather Dashboard </div>
+       
+        <div class="flex-container weather-card">
+            
+
+             <div class="weather-card-dt-local">
+                
+                <h1 class="today-title">TODAY</h1>
+                    <h3 class="text"> <%=time%> </h3>
+                    <!-- let city = locals.cityName[0].toUpperCase() + cityName.slice(1);%> -->
+                        <h3 class="text"> <%=JSON.parse(tZone) %> </h3>
+                </div>
+
+                <div class="weather-data">
+               <div class="weather-card-general-weather"> 
+            
+                    <img class="weather-icon" src = " <%=currentIcon %> " alt="openweathermap weather icon"> 
+                    <p class="weather-text">
+                            <%= description %> 
+                        </p>
+            
+                   
+                   <h1 class="temp text"> <%=locals.currentTemp %>  °C </h1>
+                    <% console.log(currentTemp +  " lat:" + lat + " lon: " + lon);%>
+                   
+                </div>
+
+                
+                <div class="weather-card-description">
+                            <ul> 
+                                <li class="weather-text">
+                                    Humidity: <%=humidity %> %
+                                </li>
+                                <li class="weather-text">
+                                    Wind Speed: <%= wind %> mph
+                                </li>
+                                <li class="weather-text">
+                                    Sunrise: <%= sunrise%>
+                                </li>
+                                <li class="weather-text">
+                                    Sunset: <%=sunset %> 
+                                </li>
+                            </ul>
+                </div>
+           </div>
+            
+        </div>
+        
+        
+            <div class="flex-container next-days-weather">
+
+                <div class="mini-weather-card">
+                    <h2><%= oneDay%>  </h2> 
+                    <img src = " <%=tomorrowsIcon %> " alt="openweathermap weather icon">  
+                    <%= tempTomorrow %> °C
+           
+                    <h2> <%= tomorrowsDescription%> </h2>
+
+
+                </div>
+                
+                <!-- today++, then today++ + 1 -->
+                <div class="mini-weather-card">
+                    <h2><%= twoDays%></h2>
+                    <img src = " <%=secondIcon %> " alt="openweathermap weather icon">  
+                    <%= secondTemp %> °C
+
+                    <h2> <%= secondDescription%> </h2>
+                  </div>
+                
+                  <!-- in javascript, .mini-weather-card (onclick) - hide it and show the daily 
+                  weather description -->
+
+                <div class="mini-weather-card">
+                    <h2><%= threeDays%></h2>
+                    <img src = " <%=thirdIcon %> " alt="openweathermap weather icon">  
+                    <%= thirdTemp%> °C
+
+                        <h2> <%= thirdDescription%> </h2>
+
+                </div>
+
+               
+                <a href="/"> <button class="change-location-btn">
+            <i class="fa-solid fa-location-dot fa-xl" style="color: #4d6793;"></i> 
+Change Location
+      </button></a>
+           </div>
+       
+       
+           
+         </div>     
+
+          
+
+       
+       
+
+    
+            <!-- https://stackoverflow.com/questions/70721356/how-to-display-sunrise-and-sunset-time-in-the-local-time-of-the-city-that-is-bei
+                -->
+                    <!-- <} else {%>
+                        <    let submit = req.body.submit;%>
+                     <  sumbit.on("click", )%>
+                <h1> <=weather%></h1>
+             < }%> -->
+          
+       <!-- i want daily weather and sunrise for whichever location you're at -->
+      
+        <!-- <= weather %> -->
+      
+
+      
+        
+       
+    </body>
+</html>
