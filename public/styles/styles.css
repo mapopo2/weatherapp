@@ -108,9 +108,9 @@ input{
 .search-btn:hover{
     cursor: pointer;
 }
-
+/* ? */
 .get-location {
-    height: 3rem;
+    height: 3rem; 
     width: 30rem;
     background-color:#46C2CB ;
     border:none;
