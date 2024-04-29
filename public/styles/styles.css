@@ -89,7 +89,7 @@ input{
     border:none;
     /* padding: 2rem; */
     color: rgb(89, 126, 139);
-    font-family: "PT Sans", sans-serif;
+    
     font-size: 1rem;
     margin-right: 4rem;
 
@@ -107,7 +107,7 @@ input{
     background-image: linear-gradient(45deg, rgba(47, 81, 97, 0.726), rgba(83, 114, 128, 0.612));
     color:#DDDDDD;
     padding: 0.5rem;
-    font-family: "PT Sans", sans-serif;
+   
     font-size: 1rem;
 
     font-weight: 600;
@@ -123,7 +123,7 @@ input{
     width: 30rem;
     background-color:#424769;
     border:none;
-    font-family: "PT Sans", sans-serif;
+   
     font-size: 1rem;
     color:#DDDDDD;
 }
