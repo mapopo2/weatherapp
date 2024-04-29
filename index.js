@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
-import https from "https";
+import https, { get } from "https";
 //const https = require('node:https'); 
 
 const app = express();
@@ -21,7 +21,6 @@ const myAPIKey = "4c2165a091cf56966b2d0788003fc3ae";
  app.get ("/", (req, res) => {
     try {
         res.render("index.ejs");
-
     } catch (error) {
         res.status(500).send(" OOPS! :( " + error.message );
     }
@@ -32,6 +31,19 @@ const myAPIKey = "4c2165a091cf56966b2d0788003fc3ae";
 app.post("/weather", async (req, res) =>  {
      try {
         const cityAndCountry = req.body.place;  
+
+        //https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation
+        //navigator.geolocation object - is where we call the getCurrentPosition function
+        // navigator.geolocation.getCurrentPosition((position) => {
+        //     doSomething(position.coords.latitude, position.coords.longitude);
+        //   });
+        // if ("geolocation" in navigator) {
+        //     console.log("geolocation is available"); 
+        //    } else {
+        //      console.log("geolocation is NOT available"); 
+        //    };
+           //failed to parse response: navigator is not defined
+
         //const url = "https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=83cb94f6d7a3f24956b44995ea024c29";
         //url is smaller than the long url
         //https.get(GEO_URL, function(response){
@@ -95,6 +107,49 @@ app.post("/weather", async (req, res) =>  {
             
         // getGeolocation(sucess);
          //https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
+        //  axios.all([
+        //     axios.post(`/my-url`, {
+        //       myVar: 'myValue'
+        //     }), 
+        //     axios.post(`/my-url2`, {
+        //       myVar: 'myValue'
+        //     })
+        //   ])
+        //   .then(axios.spread((data1, data2, data3) => {
+        //     // output of req.
+        //     console.log('data1', data1, 'data2', data2, 'data3', data3)
+        //   })); 
+        //   axios.all([
+        //     axios.get(GEO_URL, {
+        //         params: {
+        //             q: cityAndCountry,
+        //             //limit: 1,
+        //             appid: myAPIKey,
+        //         },
+        //     }), 
+        //     axios.get(API_URL, {
+        //         params: {
+        //             // lat: `${longitude}`,
+        //             // lon: `${latitude}`,
+        //             lat: ltd,
+        //             lon: lng,
+        //             units: 'metric',
+        //             appid: myAPIKey,
+        //         },
+        //     }),
+        //     axios.get(GEO_URL, {
+        //         params: {
+        //             q: cityAndCountry,
+        //             //limit: 1,
+        //             appid: myAPIKey,
+        //         },
+        //     }), 
+        //   ])
+        //   .then(axios.spread((data1, data2, data3) => {
+        //     // output of req.
+        //     console.log('data1', data1, 'data2', data2, 'data3', data3)
+        //   }));
+          //https://stackoverflow.com/questions/61385454/how-to-post-multiple-axios-requests-at-the-same-time
 
         function getGeolocation() {
                     return axios.get(GEO_URL, {
@@ -107,7 +162,8 @@ app.post("/weather", async (req, res) =>  {
                 };
                 
                 const acct = await (getGeolocation());
-                   
+
+           
                 const geolocationArray = acct.data;
                 let latitude =  (geolocationArray[0].lat).toString();
                 let longitude =  (geolocationArray[0].lon).toString();

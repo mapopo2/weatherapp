@@ -1,10 +1,15 @@
 html {
     font-family: "PT Sans", sans-serif;
-    background-image: linear-gradient(180deg, rgb(145, 201, 220), rgba(187, 187, 255, 0.726));
+    /* background-image: linear-gradient(180deg, rgb(27, 44, 50), rgba(47, 81, 97, 0.726)); */
+    background-color: #0F1035;
+    overflow: hidden;
+    color: #DDDDDD;
+  
 }
 
 .title {
-    color: #46C2CB;
+    /* color: #46C2CB; */
+    color:#424769 ;
     width: 30rem;
     margin: auto auto 2rem;
 
@@ -25,7 +30,7 @@ html {
     align-items: center;
     justify-content: center;
     /*https://blog.hubspot.com/website/center-div-css*/
-     min-height: 0;
+    min-height: 0;
     
     
     /* width: 40rem; min-width: 0; */
@@ -58,13 +63,17 @@ html {
     animation: fadeAndMoveInAnimation ease 3s;
     /* animation-iteration-count: infinite; */
     animation-fill-mode: forwards;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    
 }
 
 form {
     margin: auto;
     /* width: 40rem; */
     /* height: 8rem; */
-   
+    
     align-items: center;
     justify-content: center;
     height: 3rem;
@@ -82,7 +91,7 @@ input{
     color: rgb(89, 126, 139);
     font-family: "PT Sans", sans-serif;
     font-size: 1rem;
-    margin-right: 2rem;
+    margin-right: 4rem;
 
 }
 /* input:focus{
@@ -95,15 +104,15 @@ input{
     border: none;
     border-radius: 50%;
     width: 2rem;
-    background-image: linear-gradient(45deg, rgb(104, 205, 238), rgba(138, 138, 214, 0.612));
-    color: rgba(100, 100, 157, 0.612);
+    background-image: linear-gradient(45deg, rgba(47, 81, 97, 0.726), rgba(83, 114, 128, 0.612));
+    color:#DDDDDD;
     padding: 0.5rem;
     font-family: "PT Sans", sans-serif;
     font-size: 1rem;
 
     font-weight: 600;
    
-    box-shadow:  0.3rem  0.3rem  0.3rem rgb(116, 155, 169);
+    /* box-shadow:  0.3rem  0.3rem  0.3rem rgb(116, 155, 169); */
 }
 .search-btn:hover{
     cursor: pointer;
@@ -112,10 +121,11 @@ input{
 .get-location {
     height: 3rem; 
     width: 30rem;
-    background-color:#46C2CB ;
+    background-color:#424769;
     border:none;
     font-family: "PT Sans", sans-serif;
     font-size: 1rem;
+    color:#DDDDDD;
 }
 
 .get-location:hover {
@@ -130,18 +140,19 @@ input{
 } */
 .change-location-btn {
     border: none;
-    background-image: linear-gradient(45deg, rgb(104, 205, 238), rgba(138, 138, 214, 0.612));
+    background-color:#424769;
     /* text-align:center; */
     width: 18rem;
     height: 3rem;
     padding: 1rem;
     font-size: 1rem;
-    border-radius: 1rem;
+    /* border-radius: 1rem; */
+    border: 0.1rem solid rgb(116, 155, 169);
     margin-bottom: 0;
-    color: rgba(100, 100, 157, 0.612);
+    color:#DDDDDD;
     font-weight: 600;
     position: relative;
-    box-shadow:  0.3rem  0.3rem  0.3rem rgb(116, 155, 169);
+    /* box-shadow:  0.3rem  0.3rem  0.3rem rgb(116, 155, 169); */
     /* top: 0;
      */
 }
@@ -160,15 +171,19 @@ input{
 } */
 
 .weather-card {
-    background-image: linear-gradient(180deg, rgba(187, 187, 255, 0.612), rgb(145, 201, 220));
-    border-radius: 5rem;
-    box-shadow: 1rem 1rem 2rem rgb(89, 126, 139);
-    width: 25rem;
-    height: 30rem;
+    background-color: #424769;
+    /* background-image: linear-gradient(180deg, rgba(46, 60, 93, 0.612), rgb(47, 57, 63)); */
+    /* background-image: linear-gradient(180deg, rgba(187, 187, 255, 0.612), rgb(145, 201, 220)); */
+    /* border-radius: 5rem; */
+    /* box-shadow: 1rem 1rem 2rem rgb(89, 126, 139); */
+    width: 35rem;
+    /* height: 30rem; */
     /* margin: auto auto 2rem; */
     /* display: flex;
     flex-wrap: wrap;
      */
+     /* display: flex;
+     flex-wrap: wrap; */
      align-items: center;
      justify-content: center;
     min-height: 0;
@@ -180,44 +195,57 @@ input{
 .weather-data {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: center; */
-    align-items: center;
+    justify-content: center;
+    /* align-items: center; */
+    text-align: center;
 }
+/* 
+.weather-icon {
+    width: 7rem;
+} */
 
 .weather-card-dt-local {
     /* font-size: 1rem; */
     text-align: left;
 }
 
-.weather-card-general-weather {
+/* .weather-card-general-weather {
     width: 10rem;
-    text-align: left;
+    /* text-align: center; */
 
-}
+
 
 .weather-card-description {
     width: 13rem;
     text-align: left;
 }
 
+.temp {
+    font-size: 4rem;
+}
+
+.des-text {
+    font-size: 3rem;
+}
 .next-days-weather {
     /* background-color: rgb(75, 79, 113); */
     /* border-radius: 5rem; */
     /* box-shadow: 1rem 1rem 2rem rgb(89, 126, 139); */
     
-    width: 50rem;
-    height: 16rem;
+    width: 100%;
+    height: 100%;
     /* margin: auto auto 2rem; */
     display: flex;
     flex-wrap: wrap;
+    /* flex-direction: column; */
     justify-content: center;
-    align-items: center;
+    /* align-items: flex-start;  */
     /* left: 50%; */
-   
+    padding: 0 2rem;
     /* flex-direction: row;  transform: translate(0, -50%);*/
     /* flex-wrap: wrap; */
     /* min-height: 0; */
-    padding: 2rem;
+    /* padding: 2rem; */
     /* text-align: center; */
     animation: fadeInAnimation ease 12s;
     /* animation-iteration-count: infinite; */
@@ -227,8 +255,13 @@ input{
 }
 
 .mini-weather-card, .mini-weather-card-description {
-    width: 12rem;
-    margin: auto 2rem;
+    width: 10rem;
+    height: 12rem;
+    margin: 0.2rem 1rem 1rem;
+    background-color: #424769;
+    font-size: 0.7rem;
+    text-align: center;
+
 }
 /* .mini-weather-card-description {
     position: absolute;
@@ -252,10 +285,19 @@ input{
     flex-grow: 1;
 }
 
-h3 {
+ .description {
+    width: 16rem;
+    height: 11rem;
+    margin: 1rem;
+    /* align-items: center; */
+    justify-content: center;
+    text-align: center;
+} 
+
+/* h3 {
     text-align: left;
     font-size: 1rem;
-}
+} */
 /* 
 .text {
     
@@ -272,6 +314,7 @@ h3 {
     width: 5rem;
     height: 4rem;
     opacity: 70%;
+    /* overflow: hidden; */
 }
 @keyframes movingCloudAnimationOne {
     0% {margin-left: -5rem;
@@ -322,12 +365,10 @@ h3 {
          */
     
 
-/* 
-.cloud-one, .cloud-two, .cloud-three, .cloud-four, .cloud-five {
-    animation-iteration-count: infinite;
-    animation-fill-mode: forwards;
-    /* animation-duration: 40s; */
-     
+
+/* .cloud-one, .cloud-two, .cloud-three, .cloud-four, .cloud-five {
+    overflow: hidden;}
+      */
 .cloud-one{
     animation: movingCloudAnimationOne ease 70s;
     animation-iteration-count: infinite;
@@ -369,5 +410,13 @@ adjacent sibling selector (+)
 general sibling selector (~)
 
 
+
+CHANGES FOR VERSION CONTROL COMMITS
+29/04/24
+Colour changes 
+Flex display
+Changes to css and weather.ejs divs and class names
+Font colours and styles
+Changing presentation of data
 
 */
