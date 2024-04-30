@@ -277,11 +277,13 @@ app.post("/weather", async (req, res) =>  {
                 // }
                 
 
-            let options = { weekday: 'long' };
-            //let whatDayToday = today.toLocaleDateString("en-GB", options);
-            let dayTomorrow = tomorrow.toLocaleDateString("en-GB", options);
-            let secondDay = secondDayAfter.toLocaleDateString("en-GB", options);
-            let thirdDay = thirdDayAfter.toLocaleDateString("en-GB", options);
+            let options = { weekday: 'long', day: 'numeric', month: 'long' };
+            let options2 ={ weekday: 'long' };
+            let dayToday = today.toLocaleDateString("en-GB", options);
+
+            let dayTomorrow = tomorrow.toLocaleDateString("en-GB", options2);
+            let secondDay = secondDayAfter.toLocaleDateString("en-GB", options2);
+            let thirdDay = thirdDayAfter.toLocaleDateString("en-GB", options2);
             // let secondDay = secondDayAfter.toLocaleDateString("en-GB", options);
             // let thirdDay = thirdDayAfter.toLocaleDateString("en-GB", options);
             console.log(dayTomorrow + " " + secondDay + " " + thirdDay);
@@ -337,6 +339,7 @@ app.post("/weather", async (req, res) =>  {
                     secondIcon: secondtImageURL,
                     thirdIcon: thirdImageURL,
 
+                    dateToday: dayToday,
                     oneDay: dayTomorrow,
                     twoDays: secondDay,
                     threeDays: thirdDay,
@@ -349,11 +352,6 @@ app.post("/weather", async (req, res) =>  {
                     tempTomorrowF: celsiusToFahrenheit(perm.data.daily[0].temp.day),
                     secondTempF:  celsiusToFahrenheit(perm.data.daily[1].temp.day),
                     thridTempF:  celsiusToFahrenheit(perm.data.daily[2].temp.day),
-
-                    tempsC: req.body.tempsC,
-                    tempsF: req.body.tempsF,
-                    fahren: req.body.fahren,
-
 
                     tomorrowsDescription: JSON.parse(tomorrowsDes),
                     secondDescription: JSON.parse(secondDes),
