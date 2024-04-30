@@ -10,7 +10,8 @@
                         <h1 class="today-title">TODAY</h1>
                         <!-- getDate -->
                             <h3 class="text"> <%=time%> </h3>
-                            <!-- let city = locals.cityName[0].toUpperCase() + cityName.slice(1);%> -->
+                            <!-- https://momentjs.com/
+                                let city = locals.cityName[0].toUpperCase() + cityName.slice(1);%> -->
                                 <h3 class="text"> <%=JSON.parse(tZone) %> </h3>
                         </div>
 
@@ -19,7 +20,14 @@
                     <div class="weather-card-general-weather"> 
                        
                         <img class="weather-icon" src = " <%=currentIcon %> " alt="openweathermap weather icon"> 
-                        <h1 class="temp text"> <%=locals.currentTemp %>  °C </h1>   
+                        <h1 class="temp text" name="tempsC"> <%=locals.currentTemp %>   </h1>
+                        
+                        
+                        <button class="tempMes celc" name="celc"> °C </button> 
+                        <button class="tempMes fahren" name="fahren" >°F </button> 
+
+                
+                
                         <p class="weather-text">
                             <%= description[0].toUpperCase() + description.slice(1); %> 
                         </p>
@@ -58,8 +66,8 @@
                 <div class="mini-weather-card">
                     <h2><%= oneDay%>  </h2> 
                     <img src = " <%=tomorrowsIcon %> " alt="openweathermap weather icon">  
-                    <%= tempTomorrow %> °C
-           
+                   <%= tempTomorrow %> °C
+                    
                     <h2> <%= tomorrowsDescription[0].toUpperCase() + tomorrowsDescription.slice(1); %> </h2>
                     
 
@@ -70,8 +78,8 @@
                 <div class="mini-weather-card">
                     <h2><%= twoDays%></h2>
                     <img src = " <%=secondIcon %> " alt="openweathermap weather icon">  
-                    <%= secondTemp %> °C
-
+                   <%= secondTemp %> °C
+                  
                     <h2> <%= secondDescription[0].toUpperCase() + secondDescription.slice(1); %>  </h2>
                   </div>
                 

@@ -304,10 +304,16 @@ app.post("/weather", async (req, res) =>  {
 
             // let whatDayToday = today.toLocaleDateString("en-GB", options);
             // let whatDaytomorrow = tomorrow.toLocaleDateString("en-GB", options);
-
-           
-
             console.log(currentHours + ":" + currentMinutes);
+
+            function celsiusToFahrenheit(celsius) {
+                const fahrenheit = celsius * 9/5 + 32;
+                return fahrenheit;
+            };
+
+            console.log(celsiusToFahrenheit(perm.data.current.temp)); 
+
+
                 res.render( "weather.ejs", {
                     //sunUp: sunrise,
                     lon: lng,
@@ -339,10 +345,21 @@ app.post("/weather", async (req, res) =>  {
                     secondTemp: perm.data.daily[1].temp.day,
                     thirdTemp: perm.data.daily[2].temp.day,
 
+                    currentTempF: celsiusToFahrenheit(perm.data.current.temp),
+                    tempTomorrowF: celsiusToFahrenheit(perm.data.daily[0].temp.day),
+                    secondTempF:  celsiusToFahrenheit(perm.data.daily[1].temp.day),
+                    thridTempF:  celsiusToFahrenheit(perm.data.daily[2].temp.day),
+
+                    tempsC: req.body.tempsC,
+                    tempsF: req.body.tempsF,
+                    fahren: req.body.fahren,
+
+
                     tomorrowsDescription: JSON.parse(tomorrowsDes),
                     secondDescription: JSON.parse(secondDes),
                     thirdDescription: JSON.parse(thirdDes),
                 });
+
             //I had locals.lon in the ejs file - Failed to parse response: Request failed with status code 400 - 
             
              //req.on("end", () => {
@@ -382,6 +399,24 @@ app.post("/weather", async (req, res) =>  {
     //     res.status(500).send(" OOPS! :(" + error.message );
     // } 
 });
+
+// app.get("/weather", (req, res) => {
+//     // const tempMes = req.body.tempMes;
+//     let temperatureC = res.body.celc;
+//     let temperatureF = res.body.fahren; 
+
+//     temperatureF.addEventListener("click", function(){
+//     let tempsF = res.body.tempsF;
+//     let tempsC = res.body.tempsC;
+//     tempsF.classList.remove("hidden");
+//     tempsC.classList.add("hidden");
+
+//     });
+
+//     // res.redirect("/weather")
+
+// });
+
 
 
 app.listen(port, () => {

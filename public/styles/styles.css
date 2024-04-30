@@ -7,6 +7,10 @@ html {
   
 }
 
+body {
+    margin: 0;
+}
+
 .title {
     /* color: #46C2CB; */
     color:#424769 ;
@@ -23,6 +27,8 @@ html {
     width: 80rem;
     /* min-height: 0; */
     /* margin: auto; */
+    z-index: 1;
+    /* https://www.shecodes.io/athena/72599-how-to-bring-an-element-to-the-front-in-css-using-z-index */
     top: 50%;
     left: 50%;
     position: absolute;
@@ -60,11 +66,11 @@ html {
 }
 
 .weather-page {
-    animation: fadeAndMoveInAnimation ease 3s;
+    /* animation: fadeInAnimation ease 12s; */
     /* animation-iteration-count: infinite; */
     animation-fill-mode: forwards;
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     height: 100%;
     
 }
@@ -172,6 +178,7 @@ input{
 
 .weather-card {
     background-color: #424769;
+    animation: fadeInAnimation ease 10s;
     /* background-image: linear-gradient(180deg, rgba(46, 60, 93, 0.612), rgb(47, 57, 63)); */
     /* background-image: linear-gradient(180deg, rgba(187, 187, 255, 0.612), rgb(145, 201, 220)); */
     /* border-radius: 5rem; */
@@ -224,6 +231,25 @@ input{
     font-size: 4rem;
 }
 
+.tempMes {
+    font-size: 4rem;
+    background-color: #424769;
+    color: #DDDDDD;
+    border: none;
+}
+.tempMes:hover {
+    cursor: pointer;
+}
+
+.fahren {
+    font-size: 2rem;
+    background-color:#0F1035 ;
+}
+
+.hidden {
+    display: none;
+}
+
 .des-text {
     font-size: 3rem;
 }
@@ -231,7 +257,7 @@ input{
     /* background-color: rgb(75, 79, 113); */
     /* border-radius: 5rem; */
     /* box-shadow: 1rem 1rem 2rem rgb(89, 126, 139); */
-    
+    animation: fadeInAnimation ease 12s;
     width: 100%;
     height: 100%;
     /* margin: auto auto 2rem; */
@@ -241,13 +267,13 @@ input{
     justify-content: center;
     /* align-items: flex-start;  */
     /* left: 50%; */
-    padding: 0 2rem;
+    padding: 1rem 5rem;
     /* flex-direction: row;  transform: translate(0, -50%);*/
     /* flex-wrap: wrap; */
     /* min-height: 0; */
     /* padding: 2rem; */
     /* text-align: center; */
-    animation: fadeInAnimation ease 12s;
+    /* animation: fadeInAnimation ease 12s; */
     /* animation-iteration-count: infinite; */
     animation-fill-mode: forwards;
    
@@ -257,10 +283,11 @@ input{
 .mini-weather-card, .mini-weather-card-description {
     width: 10rem;
     height: 12rem;
-    margin: 0.2rem 1rem 1rem;
+    margin: 0.1rem 1rem 0.2rem ;
     background-color: #424769;
     font-size: 0.7rem;
     text-align: center;
+    border-radius: 0.2rem;
 
 }
 /* .mini-weather-card-description {
@@ -288,7 +315,7 @@ input{
  .description {
     width: 16rem;
     height: 11rem;
-    margin: 1rem;
+    margin-bottom: 0;
     /* align-items: center; */
     justify-content: center;
     text-align: center;
@@ -315,6 +342,8 @@ input{
     height: 4rem;
     opacity: 70%;
     /* overflow: hidden; */
+    z-index: 0;
+    position: relative;
 }
 @keyframes movingCloudAnimationOne {
     0% {margin-left: -5rem;
