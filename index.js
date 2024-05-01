@@ -260,6 +260,8 @@ app.post("/weather", async (req, res) =>  {
             let currentSunsetTime = currentSunsetHour + ":" + currentSunsetMinutes;
             
             let today  = new Date();
+            let hour = today.getHours();
+            //for am time
             let tomorrow = new Date(today);
             tomorrow.setDate(today.getDate() + 1);
             let secondDayAfter = new Date(today);
@@ -327,6 +329,7 @@ app.post("/weather", async (req, res) =>  {
                     tZone: JSON.stringify(perm.data.timezone),
                     cityName: cityAndCountry,
                     time: currentTime,
+                    todayHour: hour,
                     sunrise: currentSunriseTime,
                     sunset: currentSunsetTime,
                     currentTemp: perm.data.current.temp,

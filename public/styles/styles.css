@@ -84,19 +84,21 @@ input{
     https://developer.mozilla.org/en-US/docs/Web/CSS/border*/
     /* height: 3rem; */
     background-color: #DDDDDD;
-    width: 85%;
+    width: 90%;
     height: 3rem;
-    border:none;
-     
-    /* padding: 2rem; */
-    color: #DDDDDD;
+    border-radius: 0.3rem;
+    border: none;
+    padding: 1rem;
+    color: #424769;
     font-size: 1rem;
+    
     /* margin-right: 3rem; */
-    text-align: center;
+    /* text-align: center; */
 }
 
 input::placeholder {
     color: grey;
+    
 }
 
 input:focus{
@@ -115,7 +117,7 @@ input:focus{
     padding: 0.5rem;
     font-size: 1rem; 
     font-weight: 600;
-   
+    /* margin-left: 1rem; */
     /* box-shadow:  0.3rem  0.3rem  0.3rem rgb(116, 155, 169); */
 }
 .search-btn:hover{
@@ -287,11 +289,13 @@ input:focus{
     font-size: 0.7rem;
     text-align: center;
     border-radius: 0.2rem;
-
+    display: inline-block;
 }
 .mini-weather-card-des {
     font-size: 1rem;
     border-top: 0.1rem solid #DDDDDD;
+    
+    
 }
     
 
