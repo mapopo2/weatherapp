@@ -4,9 +4,9 @@ import axios from "axios";
 import https, { get } from "https";
 //const https = require('node:https'); 
 // const EventEmitter = require('node:events');
-import { EventEmitter } from "node:events";
-class MyEmitter extends EventEmitter {};
-const myEmitter = new MyEmitter ();
+// import { EventEmitter } from "node:events";
+// class MyEmitter extends EventEmitter {};
+// const myEmitter = new MyEmitter ();
 
 const app = express();
 const port = 3000;
