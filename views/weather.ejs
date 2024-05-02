@@ -12,6 +12,7 @@
                             <% if (todayHour < 12 ) { %>
                                 <h3 class="text"> <%=time%> AM </h3>
                             <% } else if (11 <= todayHour <= 13) { %>
+                                <!-- // <= less than or equal -->
                                 <h3 class="text"> <%=time%> PM</h3>
                             <% } else { %>
                                 <h3 class="text"> <%=time%> </h3>
@@ -27,8 +28,12 @@
                     <div class="weather-card-general-weather"> 
                        
                         <img class="weather-icon" src = " <%=currentIcon %> " alt="openweathermap weather icon"> 
-                        <h1 class="temp text"> <%=locals.currentTemp %> °C  </h1>
-                
+                        <h1 class="temp text" name="tempsC"> <%=locals.currentTemp %> °C  </h1>
+                        <!-- <h1 class="temp text hidden" name="tempsF"> <locals.currentTempF%> °F  </h1> -->
+<!--                 
+                        <button name="temperatureC" onclick="(changeMes())">°C </button>
+                        <button >°F </button> -->
+
                         <p class="weather-text">
                             <%= description[0].toUpperCase() + description.slice(1); %> 
                         </p>
@@ -110,8 +115,10 @@
 
                     <div class="mini-weather-card description">
                         <h3> Sunrise </h2> 
-                            <% if (sunrise <= 12 ) { %>
+                            <% if (sunriseHour <= 12 ) { %>
                             <h1 class="des-text"><%= sunrise%> AM </h1>
+                            <% } else if (12 <= sunriseHour <= 13) {%>
+                            <h1 class="des-text"><%= sunrise%> PM </h1>
                             <% } else { %>
                             <h1 class="des-text"><%= sunrise%> </h1>
                             <% } %> 
@@ -119,8 +126,13 @@
 
                     <div class="mini-weather-card description">
                         <h3> Sunset </h2> 
-                        
-                            <h1 class="des-text"><%=sunset %> </h1>
+                            <% if (sunsetHour <= 12 ) { %>
+                            <h1 class="des-text"><%=sunset %> AM</h1>
+                            <% } else if (12 <= sunsetHour <= 13) {%>
+                            <h1 class="des-text"><%= sunset%> PM </h1>
+                            <% } else { %>
+                                <h1 class="des-text"><%= sunset%> </h1>
+                                <% } %> 
 
                     </div>
                 <!-- </div> -->

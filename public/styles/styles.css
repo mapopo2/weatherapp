@@ -231,6 +231,10 @@ input:focus{
     font-size: 4rem;
 }
 
+.hidden {
+    display: none;
+}
+
 .tempMes {
     font-size: 4rem;
     background-color: #424769;

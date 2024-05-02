@@ -3,6 +3,10 @@ import bodyParser from "body-parser";
 import axios from "axios";
 import https, { get } from "https";
 //const https = require('node:https'); 
+// const EventEmitter = require('node:events');
+import { EventEmitter } from "node:events";
+class MyEmitter extends EventEmitter {};
+const myEmitter = new MyEmitter ();
 
 const app = express();
 const port = 3000;
@@ -260,8 +264,6 @@ app.post("/weather", async (req, res) =>  {
             let currentSunsetTime = currentSunsetHour + ":" + currentSunsetMinutes;
             
             let today  = new Date();
-            let hour = today.getHours();
-            //for am time
             let tomorrow = new Date(today);
             tomorrow.setDate(today.getDate() + 1);
             let secondDayAfter = new Date(today);
@@ -277,8 +279,6 @@ app.post("/weather", async (req, res) =>  {
                 //     date.setDate(date.getDate() + 1);
                 //     console.log(date);
                 // }
-                
-
             let options = { weekday: 'long', day: 'numeric', month: 'long' };
             let options2 ={ weekday: 'long' };
             let dayToday = today.toLocaleDateString("en-GB", options);
@@ -310,13 +310,21 @@ app.post("/weather", async (req, res) =>  {
             // let whatDaytomorrow = tomorrow.toLocaleDateString("en-GB", options);
             console.log(currentHours + ":" + currentMinutes);
 
-            function celsiusToFahrenheit(celsius) {
-                const fahrenheit = celsius * 9/5 + 32;
-                return fahrenheit;
-            };
+            // function celsiusToFahrenheit(celsius) {
+            //     const fahrenheit = celsius * 9/5 + 32;
+            //     return fahrenheit;
+            // };
 
-            console.log(celsiusToFahrenheit(perm.data.current.temp)); 
-
+            // let temperatureC = req.body.celc;
+            // let temperatureF = req.body.fahren; 
+        
+            // myEmitter.on("click", () => {
+            //     let tempsF = req.body.tempsF;
+            //     let tempsC = req.body.tempsC;
+            //     tempsF.classList.remove("hidden");
+            //     tempsC.classList.add("hidden");
+        
+            // });
 
                 res.render( "weather.ejs", {
                     //sunUp: sunrise,
@@ -329,9 +337,11 @@ app.post("/weather", async (req, res) =>  {
                     tZone: JSON.stringify(perm.data.timezone),
                     cityName: cityAndCountry,
                     time: currentTime,
-                    todayHour: hour,
+                    todayHour: currentHours,
                     sunrise: currentSunriseTime,
+                    sunriseHour: currentSunriseHour,
                     sunset: currentSunsetTime,
+                    sunsetHour: currentSunsetHour,
                     currentTemp: perm.data.current.temp,
                     humidity: JSON.stringify(perm.data.current.humidity),
                     wind: JSON.stringify(perm.data.current.wind_speed),
@@ -351,14 +361,15 @@ app.post("/weather", async (req, res) =>  {
                     secondTemp: perm.data.daily[1].temp.day,
                     thirdTemp: perm.data.daily[2].temp.day,
 
-                    currentTempF: celsiusToFahrenheit(perm.data.current.temp),
-                    tempTomorrowF: celsiusToFahrenheit(perm.data.daily[0].temp.day),
-                    secondTempF:  celsiusToFahrenheit(perm.data.daily[1].temp.day),
-                    thridTempF:  celsiusToFahrenheit(perm.data.daily[2].temp.day),
-
                     tomorrowsDescription: JSON.parse(tomorrowsDes),
                     secondDescription: JSON.parse(secondDes),
                     thirdDescription: JSON.parse(thirdDes),
+
+                    
+                    // currentTempF: celsiusToFahrenheit(perm.data.current.temp),
+                    // tempTomorrowF: celsiusToFahrenheit(perm.data.daily[0].temp.day),
+                    // secondTempF:  celsiusToFahrenheit(perm.data.daily[1].temp.day),
+                    // thridTempF:  celsiusToFahrenheit(perm.data.daily[2].temp.day),
                 });
 
             //I had locals.lon in the ejs file - Failed to parse response: Request failed with status code 400 - 
@@ -403,22 +414,56 @@ app.post("/weather", async (req, res) =>  {
 
 // app.get("/weather", (req, res) => {
 //     // const tempMes = req.body.tempMes;
-//     let temperatureC = res.body.celc;
-//     let temperatureF = res.body.fahren; 
+//     // let temperatureC = req.body.celc;
+//     // let temperatureF = req.body.fahren; 
 
-//     temperatureF.addEventListener("click", function(){
-//     let tempsF = res.body.tempsF;
-//     let tempsC = res.body.tempsC;
-//     tempsF.classList.remove("hidden");
-//     tempsC.classList.add("hidden");
+//     // myEmitter.on("click", () => {
+//     //     let tempsF = req.body.tempsF;
+//     //     let tempsC = req.body.tempsC;
+//     //     tempsF.classList.remove("hidden");
+//     //     tempsC.classList.add("hidden");
 
+//     // });
+
+//      function changeMes(){
+//         let tempsF = req.body.tempsF;
+//         let tempsC = req.body.tempsC;
+//         tempsF.classList.remove("hidden");
+//         tempsC.classList.add("hidden");
+    
+//         };
+    
+//     // temperatureF.addEventListener("click", function(){
+//     // let tempsF = req.body.tempsF;
+//     // let tempsC = req.body.tempsC;
+//     // tempsF.classList.remove("hidden");
+//     // tempsC.classList.add("hidden");
+
+//     // });
+
+//     res.render("weather.ejs", {
+//         cOrF: changeMes,
 //     });
-
-//     // res.redirect("/weather")
 
 // });
 
+// app.patch("/weather", (req,res) [
 
+
+//     function celsiusToFahrenheit(celsius) {
+//         const fahrenheit = celsius * 9/5 + 32;
+//         return fahrenheit;
+//     };
+
+//     console.log(celsiusToFahrenheit(perm.data.current.temp)); 
+
+//     //select buttons -
+
+
+
+
+
+// ]);
 
 app.listen(port, () => {
     console.log(`server listening on port ${port}`);
