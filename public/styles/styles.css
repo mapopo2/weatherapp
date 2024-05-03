@@ -1,5 +1,5 @@
 html {
-    font-family: "PT Sans", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     /* background-image: linear-gradient(180deg, rgb(27, 44, 50), rgba(47, 81, 97, 0.726)); */
     background-color: #0F1035;
     overflow: hidden;
@@ -16,12 +16,13 @@ body {
     /* color: #46C2CB; */
     color:#DDDDDD ; 
     width: 30rem;
-    margin: auto auto 2rem;
+    margin: 0 auto 2rem;
+    text-align: center; 
 
 }
 
 .home {
-    text-align: center;
+    /* text-align: center; */
     /* display: flex;
     flex-wrap: nowrap; */
     /* 
@@ -75,7 +76,7 @@ body {
 form {
     /* width: 40rem; */
     /* height: 8rem; */
-    padding: 0;
+    
     background-color: #424769;
     height: 3rem;
     
@@ -85,7 +86,8 @@ input{
     /* border-radius: 2rem; 
     https://developer.mozilla.org/en-US/docs/Web/CSS/border*/
     /* height: 3rem; */
-    background-color: #DDDDDD;
+    /* background-color: #DDDDDD; */
+    opacity: 60%;
     width: 90%;
     height: 3rem;
     border-radius: 0.3rem;
@@ -110,35 +112,40 @@ input:focus{
 
 
 .search-btn {
-    border: none;
-    justify-content: center;
-    border-radius: 50%;
-    width: 2rem;
-    background-image: linear-gradient(45deg, rgba(47, 81, 97, 0.726), rgba(83, 114, 128, 0.612));
+    /* border: none; */
+    border: 0.1rem solid #DDDDDD;
+    /* align-items: center;*/
+    border-radius: 50%; 
+    /* width: 3rem; */
+    background-color: #424769;
+    /* background-image: linear-gradient(45deg, rgba(47, 81, 97, 0.726), rgba(83, 114, 128, 0.612)); */
     color:#DDDDDD;
     padding: 0.5rem;
     font-size: 1rem; 
     font-weight: 600;
+    margin: 0 0 0 0.5rem;
+    position: relative;
     /* margin-left: 1rem; */
     /* box-shadow:  0.3rem  0.3rem  0.3rem rgb(116, 155, 169); */
 }
 .search-btn:hover{
     cursor: pointer;
+    
 }
 /* ? */
-.get-location {
-    height: 3rem; 
+/* .get-location {
+    height: 3rem;
     width: 30rem;
     background-color:#424769;
     border:none;
    
     font-size: 1rem;
     color:#DDDDDD;
-}
+} 
 
 .get-location:hover {
     cursor: pointer;
-}
+}*/
 /* input:active {
     border-color: white;
 } */
@@ -146,6 +153,13 @@ input:focus{
     text-align: center;
     height: 4rem;
 } */
+
+img {
+    background-color: #818FB4;
+    border-radius:50%;
+    /* opacity: 60%; */
+}
+
 .change-location-btn {
     border: none;
     background-color:#424769;
@@ -328,7 +342,7 @@ input:focus{
     /* align-items: center; */
     justify-content: center;
     text-align: center;
-} 
+}
 
 /* h3 {
     text-align: left;

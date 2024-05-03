@@ -326,6 +326,8 @@ app.post("/weather", async (req, res) =>  {
         
             // });
 
+
+
                 res.render( "weather.ejs", {
                     //sunUp: sunrise,
                     lon: lng,

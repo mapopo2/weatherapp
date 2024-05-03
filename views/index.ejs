@@ -1,7 +1,9 @@
 <%- include ("partials/header.ejs");-%>
     <body>
 
+
         <div class="home home-page">
+
             <div class="search">
                 <h1 class="title">Check the weather forecast</h1>
             
@@ -13,6 +15,9 @@
                 </form>
              
             </div>
+
+            
+
         </div>
 
         <div class="cloud cloud-one"><i class="fa-solid fa-cloud fa-2xl cloudy one" style="color: #dce1ea;"></i></div>
@@ -21,7 +26,7 @@
         <div class="cloud cloud-four"><i class="fa-solid fa-cloud fa-2xl cloudy" style="color: #dce1ea;"></i></div>
         <div class="cloud cloud-five"><i class="fa-solid fa-cloud fa-2xl cloudy" style="color: #dce1ea;"></i></div>
        
-
+        <%- include("partials/footer.ejs"); -%>
         <!-- So I'm putting this through version control - will make 2 other versions 
             to see what it will look like in 2 different styles from the examples I looked at
 
@@ -51,10 +56,5 @@
        <!-- i want daily weather and sunrise for whichever location you're at -->
       
         <!-- <= weather %> -->
-      
-
-        <%- include("partials/footer.ejs"); -%>
-        
-       
     </body>
 </html>
