@@ -36,6 +36,7 @@ app.post("/weather", async (req, res) =>  {
      try {
         const cityAndCountry = req.body.place;  
 
+
         //https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation
         //navigator.geolocation object - is where we call the getCurrentPosition function
         // navigator.geolocation.getCurrentPosition((position) => {
@@ -46,14 +47,12 @@ app.post("/weather", async (req, res) =>  {
         //    } else {
         //      console.log("geolocation is NOT available"); 
         //    };
-           //failed to parse response: navigator is not defined
 
+           //failed to parse response: navigator is not defined
         //const url = "https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=83cb94f6d7a3f24956b44995ea024c29";
         //url is smaller than the long url
         //https.get(GEO_URL, function(response){
         //console.log(response);    
-
-
         // what I want to do is pass data from the weather app
         // *can pass html through javascript
         //https.request() returns an instance of the http.ClientRequest class.
@@ -281,6 +280,7 @@ app.post("/weather", async (req, res) =>  {
                 // }
             let options = { weekday: 'long', day: 'numeric', month: 'long' };
             let options2 ={ weekday: 'long' };
+            
             let dayToday = today.toLocaleDateString("en-GB", options);
 
             let dayTomorrow = tomorrow.toLocaleDateString("en-GB", options2);
@@ -333,7 +333,7 @@ app.post("/weather", async (req, res) =>  {
                     weatherData: JSON.stringify(perm.data),
                     // tomorrowsTemp: JSON.stringify(perm.data.daily.temp.day),
                     // tomorrowsDay: dayTomorrow,
-                    
+                    // thisYear: year, 
                     tZone: JSON.stringify(perm.data.timezone),
                     cityName: cityAndCountry,
                     time: currentTime,

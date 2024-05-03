@@ -9,6 +9,7 @@ html {
 
 body {
     margin: 0;
+    
 }
 
 .title {
@@ -21,8 +22,9 @@ body {
 
 .home {
     text-align: center;
-    display: flex;
     /* display: flex;
+    flex-wrap: nowrap; */
+    /* 
     flex-wrap: nowrap; */
     width: 80rem;
     /* min-height: 0; */
@@ -31,7 +33,7 @@ body {
     /* https://www.shecodes.io/athena/72599-how-to-bring-an-element-to-the-front-in-css-using-z-index */
     top: 50%;
     left: 50%;
-    position: absolute;
+    position: relative;
     transform: translate(-50%, -50%);
     align-items: center;
     justify-content: center;
@@ -257,7 +259,7 @@ input:focus{
 .des-text {
     font-size: 3rem;
 }
-.next-days-weather {
+.more-weather-details {
     /* background-color: rgb(75, 79, 113); */
     /* border-radius: 5rem; */
     /* box-shadow: 1rem 1rem 2rem rgb(89, 126, 139); */
@@ -427,6 +429,12 @@ li {
     list-style: none;
 }
 
+.copyright-date {
+    
+    padding: 4rem 1rem 0;
+   
+}
+
 /* @keyframe{
 
 } */
@@ -449,3 +457,39 @@ general sibling selector (~)
 
 
 */
+/* --------------------Device specs------------------------ */
+@media only screen and (max-width: 900px) {
+    html {
+        overflow:visible;
+        flex-wrap: wrap;
+    } .weather-page {
+        flex-wrap: wrap;
+    }.weather-card {
+        width: 100%;
+    } .weather-data {
+        justify-content: space-between;
+        align-items: center; 
+    } .change-location-link {
+       height: 5rem;
+    
+    }.weather-card-general-weather {
+        float: left;
+        position: relative;
+        
+    }
+    .more-weather-details {
+      flex-wrap: wrap;
+     
+    } .mini-weather-card, .mini-weather-card-description {
+        /* width: 9rem;
+        height: 10rem;*/
+        margin: 0.4rem;
+        /* padding: 0;
+        background-color: #424769;
+        font-size: 0.5rem; 
+        text-align: center;
+        border-radius: 0.2rem;
+        display: inline-block; */
+    }
+}
+  

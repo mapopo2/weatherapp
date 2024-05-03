@@ -3,7 +3,7 @@
 
     <div class="weather-page">
         <div class="flex-container weather-card">
-                    
+                    <!-- display - classes, id and order of divs in ejs file, then organising css -->
 
                     <div class="weather-card-dt-local">
                         
@@ -12,7 +12,7 @@
                             <% if (todayHour < 12 ) { %>
                                 <h3 class="text"> <%=time%> AM </h3>
                             <% } else if (11 <= todayHour <= 13) { %>
-                                <!-- // <= less than or equal -->
+                                <!-- // <= less than orr equal -->
                                 <h3 class="text"> <%=time%> PM</h3>
                             <% } else { %>
                                 <h3 class="text"> <%=time%> </h3>
@@ -41,7 +41,7 @@
                        <% console.log(currentTemp +  " lat:" + lat + " lon: " + lon);%>
                         
                     </div>
-                    <a href="/"> <button class="change-location-btn">
+                    <a href="/" class="change-location-link"> <button class="change-location-btn">
                         <i class="fa-solid fa-location-dot fa-xl" style="color: #0F1035;"></i> Change Location</button></a>
 
 <!--                         
@@ -66,7 +66,7 @@
         <!-- <h1 class="title"><= JSON.parse(tZone)%></h1> -->
         <!-- <div> Weather Dashboard </div> -->
 
-            <div class="flex-container next-days-weather">
+            <div class="flex-container more-weather-details">
                 <!-- <div class="next-days-weather-des"> -->
 
                 <div class="mini-weather-card">
@@ -166,7 +166,7 @@
       
 
       
-        
+        <%- include ("partials/footer.ejs");-%>
        
     </body>
 </html>
