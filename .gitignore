@@ -1,6 +1,6 @@
 #folder with example images
-/exampleImages*
+/exampleImages
 #folder with my website images
-/myWeatherAppImages
+/Weather API Project/myWeatherAppImages
 #https://git-scm.com/docs/gitignore
 #https://www.reddit.com/r/Unity3D/comments/64egc8/gitignore_entire_directory_with_whitespace_in_name/
