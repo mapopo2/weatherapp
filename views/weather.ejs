@@ -3,7 +3,7 @@
 
     <div class="weather-page">
         <div class="flex-container weather-card">
-                    <!-- display - classes, id and order of divs in ejs file, then organising css -->
+                    <!-- CHANGE DISPLAY! - flexbox classes, id and order of divs in ejs file, then organising css -->
 
                     <div class="weather-card-dt-local">
                         
@@ -18,8 +18,6 @@
                                 <h3 class="text"> <%=time%> </h3>
                             <% } %>
                             
-                            <!-- https://momentjs.com/
-                                let city = locals.cityName[0].toUpperCase() + cityName.slice(1);%> -->
                                 <h3 class="text"> <%=JSON.parse(tZone) %> </h3>
                         </div>
 
@@ -29,10 +27,6 @@
                        
                         <img class="weather-icon" src = " <%=currentIcon %> " alt="openweathermap weather icon"> 
                         <h1 class="temp text" name="tempsC"> <%=locals.currentTemp %> °C  </h1>
-                        <!-- <h1 class="temp text hidden" name="tempsF"> <locals.currentTempF%> °F  </h1> -->
-<!--                 
-                        <button name="temperatureC" onclick="(changeMes())">°C </button>
-                        <button >°F </button> --> 
 
                         <p class="weather-text">
                             <%= description[0].toUpperCase() + description.slice(1); %> 
@@ -43,32 +37,14 @@
                     </div>
                     <a href="/" class="change-location-link"> <button class="change-location-btn">
                         <i class="fa-solid fa-location-dot fa-xl" style="color: #818FB4;"></i> Change Location</button></a>
-
-<!--                         
-                        <div class="weather-card-description">
-                                    <ul> 
-                                       
-                                      
-                                        <li class="weather-text">
-                                            Sunrise: < sunrise%>
-                                        </li>
-                                        <li class="weather-text">
-                                            Sunset: <unset %> 
-                                        </li>
-                                    </ul>
-                        </div> -->
                 </div>
 
                     
                 </div>
 
-        
-        <!-- <h1 class="title"><= JSON.parse(tZone)%></h1> -->
-        <!-- <div> Weather Dashboard </div> -->
-
             <div class="flex-container more-weather-details">
                 <!-- <div class="next-days-weather-des"> -->
-
+                <div class = "mini-weather-cards">
                 <div class="mini-weather-card">
                     <h2><%= oneDay%>  </h2> 
                     <img src = " <%=tomorrowsIcon %> " alt="openweathermap weather icon">  
@@ -78,15 +54,11 @@
 
                 </div>
                 
-                <!-- today++, then today++ + 1 -->
                 <div class="mini-weather-card">
                     <h2><%= twoDays%></h2>
                     <img src = " <%=secondIcon %> " alt="openweathermap weather icon">  
                     <p class="mini-weather-card-des"><strong> <%= secondTemp %> °C |</strong> <%= secondDescription[0].toUpperCase() + secondDescription.slice(1); %>  </p>
                   </div>
-                
-                  <!-- in javascript, .mini-weather-card (onclick) - hide it and show the daily 
-                  weather description -->
 
                 <div class="mini-weather-card">
                     <h2><%= threeDays%></h2>
@@ -95,25 +67,24 @@
 
                 </div>
 
-                
-            <!-- </div> -->
-               <!-- <div class="flex-container todays-weather-details"> -->
-                <!-- <div class="todays-weather-description"> -->
-                    <div class="mini-weather-card description">
+            </div>
+
+                    <div class="todays-weather">
+                    <div class="todays-mini-weather-card">
                         <h3> Humidity </h2> 
                         
                         <h1 class="des-text"> <%=humidity %> %</h1>
 
                     </div>
 
-                    <div class="mini-weather-card description">
+                    <div class="todays-mini-weather-card">
                         <h3> Wind Speed </h2> 
                         
                             <h1 class="des-text"><%= wind %> mph</h1>
 
                     </div>
 
-                    <div class="mini-weather-card description">
+                    <div class="todays-mini-weather-card">
                         <h3> Sunrise </h2> 
                             <% if (sunriseHour <= 12 ) { %>
                             <h1 class="des-text"><%= sunrise%> AM </h1>
@@ -124,7 +95,7 @@
                             <% } %> 
                     </div>
 
-                    <div class="mini-weather-card description">
+                    <div class="todays-mini-weather-card">
                         <h3> Sunset </h2> 
                             <% if (sunsetHour <= 12 ) { %>
                             <h1 class="des-text"><%=sunset %> AM</h1>
@@ -135,22 +106,13 @@
                                 <% } %> 
 
                     </div>
+                </div>
                
            </div>
        
     </div>
     
-            <!-- https://stackoverflow.com/questions/70721356/how-to-display-sunrise-and-sunset-time-in-the-local-time-of-the-city-that-is-bei
-                -->
-                    <!-- <} else {%>
-                        <    let submit = req.body.submit;%>
-                     <  sumbit.on("click", )%>
-                <h1> <=weather%></h1>
-             < }%> -->
-          
-       <!-- i want daily weather and sunrise for whichever location you're at -->
-      
-        <!-- <= weather %> -->
+       <!-- i want daily weather and sunrise for different locations -->
       
 
         <%- include ("partials/footer.ejs");-%>

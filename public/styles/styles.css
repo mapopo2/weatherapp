@@ -1,6 +1,5 @@
 html {
     font-family: "Plus Jakarta Sans", sans-serif;
-    /* background-image: linear-gradient(180deg, rgb(27, 44, 50), rgba(47, 81, 97, 0.726)); */
     background-color: #0F1035;
     overflow: hidden;
     color: #DDDDDD;
@@ -9,41 +8,25 @@ html {
 
 body {
     margin: 0;
-    
 }
 
 .title {
-    /* color: #46C2CB; */
     color:#DDDDDD ; 
     width: 30rem;
     margin: 0 auto 2rem;
     text-align: center; 
-
 }
 
 .home {
-    /* text-align: center; */
-    /* display: flex;
-    flex-wrap: nowrap; */
-    /* 
-    flex-wrap: nowrap; */
     width: 80rem;
-    /* min-height: 0; */
-    /* margin: auto; */
     z-index: 1;
-    /* https://www.shecodes.io/athena/72599-how-to-bring-an-element-to-the-front-in-css-using-z-index */
     top: 50%;
     left: 50%;
     position: relative;
     transform: translate(-50%, -50%);
     align-items: center;
     justify-content: center;
-    /*https://blog.hubspot.com/website/center-div-css*/
     min-height: 0;
-    
-    
-    /* width: 40rem; min-width: 0; */
-    /* position: relative; */
 }
 
 
@@ -64,29 +47,18 @@ body {
 }
 
 .weather-page {
-    /* animation: fadeInAnimation ease 12s; */
-    /* animation-iteration-count: infinite; */
     animation-fill-mode: forwards;
     display: flex;
-    /* flex-direction: row; */
     height: 100%;
     
 }
 
 form {
-    /* width: 40rem; */
-    /* height: 8rem; */
-    
     background-color: #424769;
-    height: 3rem;
-    
+    height: 3rem; 
 }
 
-input{
-    /* border-radius: 2rem; 
-    https://developer.mozilla.org/en-US/docs/Web/CSS/border*/
-    /* height: 3rem; */
-    /* background-color: #DDDDDD; */
+input {
     opacity: 60%;
     width: 90%;
     height: 3rem;
@@ -95,9 +67,6 @@ input{
     padding: 1rem;
     color: #424769;
     font-size: 1rem;
-    
-    /* margin-right: 3rem; */
-    /* text-align: center; */
 }
 
 input::placeholder {
@@ -112,71 +81,39 @@ input:focus{
 
 
 .search-btn {
-    /* border: none; */
     border: 0.1rem solid #DDDDDD;
-    /* align-items: center;*/
     border-radius: 50%; 
-    /* width: 3rem; */
     background-color: #424769;
-    /* background-image: linear-gradient(45deg, rgba(47, 81, 97, 0.726), rgba(83, 114, 128, 0.612)); */
     color:#DDDDDD;
     padding: 0.5rem;
     font-size: 1rem; 
     font-weight: 600;
     margin: 0 0 0 0.5rem;
     position: relative;
-    /* margin-left: 1rem; */
-    /* box-shadow:  0.3rem  0.3rem  0.3rem rgb(116, 155, 169); */
 }
 .search-btn:hover{
     cursor: pointer;
     
 }
-/* ? */
-/* .get-location {
-    height: 3rem;
-    width: 30rem;
-    background-color:#424769;
-    border:none;
-   
-    font-size: 1rem;
-    color:#DDDDDD;
-} 
-
-.get-location:hover {
-    cursor: pointer;
-}*/
-/* input:active {
-    border-color: white;
-} */
-/* .location-change {
-    text-align: center;
-    height: 4rem;
-} */
 
 img {
     background-color: #818FB4;
     border-radius:50%;
-    /* opacity: 60%; */
+
 }
 
 .change-location-btn {
     border: none;
     background-color:#424769;
-    /* text-align:center; */
     width: 18rem;
     height: 3rem;
     padding: 1rem;
     font-size: 1rem;
-    /* border-radius: 1rem; */
     border: 0.1rem solid #DDDDDD;
     margin-bottom: 0;
     color:#DDDDDD;
     font-weight: 600;
     position: relative;
-    /* box-shadow:  0.3rem  0.3rem  0.3rem rgb(116, 155, 169); */
-    /* top: 0;
-     */
 }
 .change-location-btn:hover {
     cursor: pointer;
@@ -185,58 +122,26 @@ img {
 
 }
 
-/* i {
-    width: 5rem;
-} */
-/* @keyframes btnHoverAnimation{
-    100% 
-} */
-
 .weather-card {
     background-color: #424769;
     animation: fadeInAnimation ease 10s;
-    /* background-image: linear-gradient(180deg, rgba(46, 60, 93, 0.612), rgb(47, 57, 63)); */
-    /* background-image: linear-gradient(180deg, rgba(187, 187, 255, 0.612), rgb(145, 201, 220)); */
-    /* border-radius: 5rem; */
-    /* box-shadow: 1rem 1rem 2rem rgb(89, 126, 139); */
     width: 37rem;
-    /* height: 30rem; */
-    /* margin: auto auto 2rem; */
-    /* display: flex;
-    flex-wrap: wrap;
-     */
-     /* display: flex;
-     flex-wrap: wrap; */
      align-items: center;
      justify-content: center;
     min-height: 0;
     padding: 2rem;
-    /* animation: fadeAndMoveInAnimation ease 5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards; */
 }
 .weather-data {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* align-items: center; */
     text-align: center;
 }
-/* 
-.weather-icon {
-    width: 7rem;
-} */
 
 .weather-card-dt-local {
-    /* font-size: 1rem; */
+  
     text-align: left;
 }
-
-/* .weather-card-general-weather {
-    width: 10rem;
-    /* text-align: center; */
-
-
 
 .weather-card-description {
     width: 13rem;
@@ -274,37 +179,25 @@ img {
     font-size: 3rem;
 }
 .more-weather-details {
-    /* background-color: rgb(75, 79, 113); */
-    /* border-radius: 5rem; */
-    /* box-shadow: 1rem 1rem 2rem rgb(89, 126, 139); */
     animation: fadeInAnimation ease 12s;
     width: 100%;
-    height: 100%;
-    /* margin: auto auto 2rem; */
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: column; */
     justify-content: center;
-    /* align-items: flex-start;  */
-    /* left: 50%; */
     padding: 1rem 5rem;
-    /* flex-direction: row;  transform: translate(0, -50%);*/
-    /* flex-wrap: wrap; */
-    /* min-height: 0; */
-    /* padding: 2rem; */
-    /* text-align: center; */
-    /* animation: fadeInAnimation ease 12s; */
-    /* animation-iteration-count: infinite; */
     animation-fill-mode: forwards;
    
     
 }
 
-.mini-weather-card, .mini-weather-card-description {
-    width: 11rem;
-    height: 12rem;
-    margin: 0.1rem 1rem 0.2rem ;
+.mini-weather-cards {
     padding: 0;
+    height: 15rem;
+   
+}
+.mini-weather-card {
+    width: 11rem;
+    margin: 0 2rem 0.2rem ;
     background-color: #424769;
     font-size: 0.7rem;
     text-align: center;
@@ -314,14 +207,14 @@ img {
 .mini-weather-card-des {
     font-size: 1rem;
     border-top: 0.1rem solid #DDDDDD;
+    width: 100%;
     
     
 }
-    
+.todays-weather {
 
-/* .mini-weather-card:hover {
-    opacity: 40%;
-} */
+    text-align: center;
+}
 
 .items {
     margin: auto;
@@ -335,26 +228,18 @@ img {
     flex-grow: 1;
 }
 
- .description {
+ .todays-mini-weather-card {
     width: 16rem;
-    height: 10rem;
-    margin-bottom: 0;
-    /* align-items: center; */
-    justify-content: center;
+    display: flex;
     text-align: center;
-}
+    padding: 0.1rem;
+    background-color: #424769;
+    border-radius: 0.2rem;
+    margin: 0.6rem;
+    display: inline-block;
 
-/* h3 {
-    text-align: left;
-    font-size: 1rem;
-} */
-/* 
-.text {
     
-} */
-/* .weather-text {
-    color: rgba(100, 100, 157, 0.612); 
-} */
+}
 
 .weather {
     height: 50rem;
@@ -364,7 +249,6 @@ img {
     width: 5rem;
     height: 4rem;
     opacity: 70%;
-    /* overflow: hidden; */
     z-index: 0;
     position: relative;
 }
@@ -405,22 +289,7 @@ img {
             } 
              100% {
               bottom: 0; }  }    
-                   
-/*                
-@keyframes chngeBtnHover {
-    0% {
-        margin-bottom: 1rem;
-    }
-    100% {margin-bottom: 1rem;}
-}
-                   
-         */
-    
 
-
-/* .cloud-one, .cloud-two, .cloud-three, .cloud-four, .cloud-five {
-    overflow: hidden;}
-      */
 .cloud-one{
     animation: movingCloudAnimationOne ease 70s;
     animation-iteration-count: infinite;
@@ -448,27 +317,6 @@ li {
     padding: 4rem 1rem 0;
    
 }
-
-/* @keyframe{
-
-} */
-/* .cloudy {
-    width: 20rem;
-} */
-/* form {
-    margin: auto;
-    text-align: ;
-} 
-
-There are four different combinators in CSS:
-
-descendant selector (space)
-child selector (>)
-adjacent sibling selector (+)
-general sibling selector (~)
-
-
-
 
 */
 /* --------------------Device specs------------------------ */
