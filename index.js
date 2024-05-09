@@ -30,8 +30,6 @@ const myAPIKey = "4c2165a091cf56966b2d0788003fc3ae";
     }
 });
 
-
-
 app.post("/weather", async (req, res) =>  {
      try {
         const cityAndCountry = req.body.place;  

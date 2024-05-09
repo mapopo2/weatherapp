@@ -1,8 +1,10 @@
 <%- include ("partials/header.ejs");-%>
     <body>
 
-    <div class="weather-page">
-        <div class="flex-container weather-card">
+    <div id="weather-forecast"> 
+        <!--Similar to portfolio, #sections were orientated vertically, should orient weather
+        forecast page horizontally - also flex-wrap, wrap?-->
+        <div id="weather-forecast-card">
                     <!-- CHANGE DISPLAY! - flexbox classes, id and order of divs in ejs file, then organising css -->
 
                     <div class="weather-card-dt-local">
@@ -21,49 +23,45 @@
                                 <h3 class="text"> <%=JSON.parse(tZone) %> </h3>
                         </div>
 
-                <div class="weather-data">
+                    <div class="weather-card-data">
 
-                    <div class="weather-card-general-weather"> 
-                       
-                        <img class="weather-icon" src = " <%=currentIcon %> " alt="openweathermap weather icon"> 
-                        <h1 class="temp text" name="tempsC"> <%=locals.currentTemp %> °C  </h1>
-
-                        <p class="weather-text">
-                            <%= description[0].toUpperCase() + description.slice(1); %> 
-                        </p>
-
-                       <% console.log(currentTemp +  " lat:" + lat + " lon: " + lon);%>
+                        <div class="weather-card-general-weather"> 
                         
-                    </div>
-                    <a href="/" class="change-location-link"> <button class="change-location-btn">
-                        <i class="fa-solid fa-location-dot fa-xl" style="color: #818FB4;"></i> Change Location</button></a>
-                </div>
+                            <img class="weather-icon" src = " <%=currentIcon %> " alt="openweathermap weather icon"> 
+                            <h1 class="temp text" name="tempsC"> <%=locals.currentTemp %> °C  </h1>
 
-                    
-                </div>
+                            <p class="weather-text">
+                                <%= description[0].toUpperCase() + description.slice(1); %> 
+                            </p>
 
-            <div class="flex-container more-weather-details">
+                        <% console.log(currentTemp +  " lat:" + lat + " lon: " + lon);%>
+                            
+                        </div>
+                        <a href="/" class="change-location-link"> <button class="change-location-btn">
+                            <i class="fa-solid fa-location-dot fa-xl" style="color: #818FB4;"></i> Change Location</button></a>
+                    </div>                  
+        </div>
+
+            <div id="detailed-weather-forecast">
                 <!-- <div class="next-days-weather-des"> -->
                 <div class = "mini-weather-cards">
-                <div class="mini-weather-card">
-                    <h2><%= oneDay%>  </h2> 
-                    <img src = " <%=tomorrowsIcon %> " alt="openweathermap weather icon">  
-                    <p class="mini-weather-card-des"> <strong><%= tempTomorrow %> °C |</strong> <%= tomorrowsDescription[0].toUpperCase() + tomorrowsDescription.slice(1); %> </p>
-                    
 
-
-                </div>
+                    <div class="mini-weather-card">
+                        <h2><%= oneDay%>  </h2> 
+                        <img src = " <%=tomorrowsIcon %> " alt="openweathermap weather icon">  
+                        <p class="mini-weather-card-description"> <strong><%= tempTomorrow %> °C |</strong> <%= tomorrowsDescription[0].toUpperCase() + tomorrowsDescription.slice(1); %> </p>
+                    </div>
                 
                 <div class="mini-weather-card">
                     <h2><%= twoDays%></h2>
                     <img src = " <%=secondIcon %> " alt="openweathermap weather icon">  
-                    <p class="mini-weather-card-des"><strong> <%= secondTemp %> °C |</strong> <%= secondDescription[0].toUpperCase() + secondDescription.slice(1); %>  </p>
+                    <p class="mini-weather-card-description"><strong> <%= secondTemp %> °C |</strong> <%= secondDescription[0].toUpperCase() + secondDescription.slice(1); %>  </p>
                   </div>
 
                 <div class="mini-weather-card">
                     <h2><%= threeDays%></h2>
                     <img src = " <%=thirdIcon %> " alt="openweathermap weather icon">                 
-                    <p class="mini-weather-card-des"><strong><%= thirdTemp%> °C |</strong> <%= thirdDescription[0].toUpperCase() + thirdDescription.slice(1); %>  </p>
+                    <p class="mini-weather-card-description"><strong><%= thirdTemp%> °C |</strong> <%= thirdDescription[0].toUpperCase() + thirdDescription.slice(1); %>  </p>
 
                 </div>
 
@@ -73,36 +71,36 @@
                     <div class="todays-mini-weather-card">
                         <h3> Humidity </h2> 
                         
-                        <h1 class="des-text"> <%=humidity %> %</h1>
+                        <h1 class="todays-mini-wc-text"> <%=humidity %> %</h1>
 
                     </div>
 
                     <div class="todays-mini-weather-card">
                         <h3> Wind Speed </h2> 
                         
-                            <h1 class="des-text"><%= wind %> mph</h1>
+                            <h1 class="todays-mini-wc-text"><%= wind %> mph</h1>
 
                     </div>
 
                     <div class="todays-mini-weather-card">
                         <h3> Sunrise </h2> 
                             <% if (sunriseHour <= 12 ) { %>
-                            <h1 class="des-text"><%= sunrise%> AM </h1>
+                            <h1 class="todays-mini-wc-text"><%= sunrise%> AM </h1>
                             <% } else if (12 <= sunriseHour <= 13) {%>
-                            <h1 class="des-text"><%= sunrise%> PM </h1>
+                            <h1 class="todays-mini-wc-text"><%= sunrise%> PM </h1>
                             <% } else { %>
-                            <h1 class="des-text"><%= sunrise%> </h1>
+                            <h1 class="todays-mini-wc-text"><%= sunrise%> </h1>
                             <% } %> 
                     </div>
 
                     <div class="todays-mini-weather-card">
                         <h3> Sunset </h2> 
                             <% if (sunsetHour <= 12 ) { %>
-                            <h1 class="des-text"><%=sunset %> AM</h1>
+                            <h1 class="todays-mini-wc-text"><%=sunset %> AM</h1>
                             <% } else if (12 <= sunsetHour <= 13) {%>
-                            <h1 class="des-text"><%= sunset%> PM </h1>
+                            <h1 class="todays-mini-wc-text"><%= sunset%> PM </h1>
                             <% } else { %>
-                                <h1 class="des-text"><%= sunset%> </h1>
+                                <h1 class="todays-mini-wc-text"><%= sunset%> </h1>
                                 <% } %> 
 
                     </div>
@@ -110,12 +108,16 @@
                
            </div>
        
+
+           
     </div>
     
        <!-- i want daily weather and sunrise for different locations -->
       
 
-        <%- include ("partials/footer.ejs");-%>
+    <div id="footer">
+        <%- include("partials/footer.ejs"); -%>
+    </div>
        
     </body>
 </html>

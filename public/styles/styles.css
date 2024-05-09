@@ -1,61 +1,54 @@
 html {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    background-color: #0F1035;
-    overflow: hidden;
-    color: #DDDDDD;
-  
+  padding: 0;
 }
 
 body {
     margin: 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: #0F1035;
+    color: #DDDDDD;
 }
 
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap; 
+}
+
+.flex-container > div {
+    text-align: center;
+  }
+  
+/* ---------------------------Home Page---------------------------- */
 .title {
-    color:#DDDDDD ; 
     width: 30rem;
     margin: 0 auto 2rem;
-    text-align: center; 
 }
 
-.home {
-    width: 80rem;
-    z-index: 1;
+#home {
+    justify-content: center;
+    margin: auto;
+    min-height: 0;
+    position: relative;
     top: 50%;
     left: 50%;
     position: relative;
     transform: translate(-50%, -50%);
-    align-items: center;
-    justify-content: center;
-    min-height: 0;
+    /* overflow: hidden; */
 }
 
-
-.home-page {
-    display: flex;
-    flex-wrap: wrap;
-    width: 40rem;
-}
-
-.search {
+.home-page-search {
+    text-align: center; 
     background-color: #424769;
     border-radius: 0.3rem;
     padding: 2rem;  
-}
-
-.search-txt {
+    width: 30rem;
+    z-index: 1;
     font-size: 1rem;
 }
 
-.weather-page {
-    animation-fill-mode: forwards;
-    display: flex;
-    height: 100%;
-    
-}
 
 form {
     background-color: #424769;
-    height: 3rem; 
 }
 
 input {
@@ -79,7 +72,13 @@ input:focus{
     background-color: #DDDDDD;
 }
 
+img {
+    background-color: #818FB4;
+    border-radius:50%;
 
+}
+
+/* ------------------------Buttons----------------------------- */
 .search-btn {
     border: 0.1rem solid #DDDDDD;
     border-radius: 50%; 
@@ -89,19 +88,10 @@ input:focus{
     font-size: 1rem; 
     font-weight: 600;
     margin: 0 0 0 0.5rem;
-    position: relative;
 }
 .search-btn:hover{
     cursor: pointer;
-    
 }
-
-img {
-    background-color: #818FB4;
-    border-radius:50%;
-
-}
-
 .change-location-btn {
     border: none;
     background-color:#424769;
@@ -119,101 +109,78 @@ img {
     cursor: pointer;
     transition: top ease 0.5s;
     top: -0.2rem;
-
 }
 
-.weather-card {
+/* ------------------------Weather Forecast Page----------------------------- */
+
+#weather-forecast {
+    animation-fill-mode: forwards;
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+}
+
+#weather-forecast-card {
     background-color: #424769;
     animation: fadeInAnimation ease 10s;
-    width: 37rem;
-     align-items: center;
-     justify-content: center;
-    min-height: 0;
+    width: 55rem;
+    align-items: center;
+    justify-content: center;
+    /* min-height: 0; */
     padding: 2rem;
-}
-.weather-data {
+} .weather-card-dt-local {
+    text-align: left;
+} .weather-card-data {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-}
-
-.weather-card-dt-local {
-  
-    text-align: left;
-}
-
-.weather-card-description {
+} .weather-card-description {
     width: 13rem;
     text-align: left;
-}
+} 
 
 .temp {
     font-size: 4rem;
 }
 
-.hidden {
-    display: none;
-}
-
-.tempMes {
-    font-size: 4rem;
-    background-color: #424769;
-    color: #DDDDDD;
-    border: none;
-}
-.tempMes:hover {
-    cursor: pointer;
-}
-
-.fahren {
-    font-size: 2rem;
-    background-color:#0F1035 ;
-}
-
-.hidden {
-    display: none;
-}
-
-.des-text {
+.todays-mini-wc-text {
     font-size: 3rem;
 }
-.more-weather-details {
+
+#detailed-weather-forecast {
     animation: fadeInAnimation ease 12s;
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 1rem 5rem;
     animation-fill-mode: forwards;
-   
-    
 }
 
 .mini-weather-cards {
-    padding: 0;
-    height: 15rem;
+    text-align: center;
    
 }
 .mini-weather-card {
     width: 11rem;
-    margin: 0 2rem 0.2rem ;
+    margin: 0 1rem;
     background-color: #424769;
     font-size: 0.7rem;
     text-align: center;
     border-radius: 0.2rem;
     display: inline-block;
 }
-.mini-weather-card-des {
+.mini-weather-card-description {
     font-size: 1rem;
     border-top: 0.1rem solid #DDDDDD;
-    width: 100%;
-    
-    
+    width: 100%; 
+    margin-top: 1rem ;  
 }
-.todays-weather {
 
+.todays-weather {
     text-align: center;
+    padding-top: 1rem;
 }
 
 .items {
@@ -236,9 +203,7 @@ img {
     background-color: #424769;
     border-radius: 0.2rem;
     margin: 0.6rem;
-    display: inline-block;
-
-    
+    display: inline-block;   
 }
 
 .weather {
@@ -248,10 +213,12 @@ img {
 .cloud { 
     width: 5rem;
     height: 4rem;
+    margin-top: 5rem;
     opacity: 70%;
-    z-index: 0;
-    position: relative;
+    z-index: -1;
+    position: absolute;
 }
+
 @keyframes movingCloudAnimationOne {
     0% {margin-left: -5rem;
     } 
@@ -279,16 +246,14 @@ img {
                         margin-left: 90rem; }
                      }
 
-           @keyframes fadeInAnimation {
-                0% {opacity: 0;
-                } 
-                 100% {
-                   opacity: 1; }  }     
-         @keyframes fadeAndMoveInAnimation {
-            0% {top: 10rem;
-            } 
-             100% {
-              bottom: 0; }  }    
+@keyframes fadeInAnimation {
+    0% {opacity: 0;
+    } 100% {
+    opacity: 1; }  }     
+@keyframes fadeAndMoveInAnimation {
+    0% {top: 10rem;
+    } 100% {
+    bottom: 0; }  }    
 
 .cloud-one{
     animation: movingCloudAnimationOne ease 70s;
@@ -297,61 +262,70 @@ img {
 .cloud-two{
     animation: movingCloudAnimationTwo ease 70s;
     animation-iteration-count: infinite;
+    margin-top: 15rem;
 }.cloud-three{
     animation: movingCloudAnimationThree ease 70s;
     animation-iteration-count: infinite;
+    margin-top: 10rem;
 }.cloud-four{
     animation: movingCloudAnimationFour ease 70s;
     animation-iteration-count: infinite;
+    margin-top: 30rem;
 }.cloud-five{
     animation: movingCloudAnimationFive ease 70s;
     animation-iteration-count: infinite;
+    margin-top: 20rem;
 }
 
 li {
     list-style: none;
 }
 
-.copyright-date {
-    
-    padding: 4rem 1rem 0;
-   
+#footer {
+    width: auto;
+    padding: 0.2rem 1rem;
+    background-color: #070F2B;
 }
 
-
 /* --------------------Device specs------------------------ */
+/* 
+Design for desktop displays from 1280×720 through 1920×1080
+
+Design for mobile displays from 360×640 through 414×896
+
+Design for tablet displays from 601×962 through 1280×800 
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries*/
+
 @media only screen and (max-width: 900px) {
-    html {
+    body {
         overflow:visible;
-        flex-wrap: wrap;
-    } .weather-page {
-        flex-wrap: wrap;
-    }.weather-card {
-        width: 100%;
-    } .weather-data {
-        justify-content: space-between;
-        align-items: center; 
-    } .change-location-link {
-       height: 5rem;
-    
-    }.weather-card-general-weather {
-        float: left;
-        position: relative;
         
+    }.title {
+        margin: 0 auto 1rem;
+        font-size: 1.3rem;
+        width: 100%;
+    }.home-page-search {
+        width: 20rem;
+        padding-bottom: 0.5rem ;
+    }input {
+        padding: 1rem;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }#weather-forecast {
+        flex-direction: column;
+    } #weather-forecast-card {
+        width: auto;
+    }  #detailed-weather-forecast {
+        padding: 1rem 2rem;
+    } .mini-weather-card {
+        width: 10rem;
+        margin-top: 1rem;
+    } img {
+       margin-bottom: 1rem;
+    }.mini-weather-card-description {
+        margin: 0;
     }
-    .more-weather-details {
-      flex-wrap: wrap;
-     
-    } .mini-weather-card, .mini-weather-card-description {
-        /* width: 9rem;
-        height: 10rem;*/
-        margin: 0.4rem;
-        /* padding: 0;
-        background-color: #424769;
-        font-size: 0.5rem; 
-        text-align: center;
-        border-radius: 0.2rem;
-        display: inline-block; */
-    }
+
 }
   
