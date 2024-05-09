@@ -46,7 +46,6 @@ body {
     font-size: 1rem;
 }
 
-
 form {
     background-color: #424769;
 }
@@ -64,7 +63,6 @@ input {
 
 input::placeholder {
     color: grey;
-    
 }
 
 input:focus{
@@ -75,7 +73,6 @@ input:focus{
 img {
     background-color: #818FB4;
     border-radius:50%;
-
 }
 
 /* ------------------------Buttons----------------------------- */
@@ -89,9 +86,11 @@ img {
     font-weight: 600;
     margin: 0 0 0 0.5rem;
 }
+
 .search-btn:hover{
     cursor: pointer;
 }
+
 .change-location-btn {
     border: none;
     background-color:#424769;
@@ -105,6 +104,7 @@ img {
     font-weight: 600;
     position: relative;
 }
+
 .change-location-btn:hover {
     cursor: pointer;
     transition: top ease 0.5s;
@@ -117,7 +117,6 @@ img {
     animation-fill-mode: forwards;
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
 }
 
 #weather-forecast-card {
@@ -126,7 +125,6 @@ img {
     width: 55rem;
     align-items: center;
     justify-content: center;
-    /* min-height: 0; */
     padding: 2rem;
 } .weather-card-dt-local {
     text-align: left;
@@ -150,7 +148,6 @@ img {
 
 #detailed-weather-forecast {
     animation: fadeInAnimation ease 12s;
-    /* width: 100%; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -287,16 +284,15 @@ li {
     background-color: #070F2B;
 }
 
-/* --------------------Device specs------------------------ */
-/* 
+/* --------------------Device specs------------------------ 
+ 
 Design for desktop displays from 1280×720 through 1920×1080
 
 Design for mobile displays from 360×640 through 414×896
 
 Design for tablet displays from 601×962 through 1280×800 
-
-https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries*/
-
+*/
+ 
 @media only screen and (max-width: 900px) {
     body {
         overflow:visible;

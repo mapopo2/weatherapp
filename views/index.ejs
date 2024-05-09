@@ -16,33 +16,16 @@
                     <form action="/weather" method="POST">
                         <input type="text" name="place" placeholder="City name and country e.g. London, GB">
                         <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        <!--have search emoticon from font awesome-->
                     </form>           
                 </div>
 
         </div>
         
-        
         <div id="footer" class="flex-container ">
             <%- include("partials/footer.ejs"); -%>
         </div>
         <style>#footer { position:absolute; width: 100%; bottom: 0;} </style>
-        <!-- So I'm putting this through version control - will make 2 other versions 
-            to see what it will look like in 2 different styles from the examples I looked at
-            Make 2 branches one called dark-plain, version-3?
-             i want daily weather and sunrise for whichever location you're at
-            
-        changes 07/05/23: 
-        - added divs - id home, footer, 
-        
-        09/05/24
-        - changed div's order and styling to fit flexbox
-        - added style tag to the index.ejs file to apply overflow styling (for clouds)
-        without applying it to the weather.ejs file. 
-        - changed sizing of home page elements (div with everything, text and input)
-        - changing the class names of elements in weather.ejs to make them clearer?
-    
-    -->
+   
 
     </body>
 </html>
