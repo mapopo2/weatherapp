@@ -68,10 +68,15 @@
             </div>
 
                     <div class="todays-weather">
-                    <div class="todays-mini-weather-card">
+                    <div class="todays-mini-weather-card humidity">
                         <h3> Humidity </h2> 
                         
-                        <h1 class="todays-mini-wc-text"> <%=humidity %> %</h1>
+                        <h1 class="todays-mini-wc-text"> <%=humidity %> %
+                            <progress id="humidity-bar" name="progress" max="100" value="<%=humidity %>"></progress>
+                        </h1>
+                        
+                        <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress -->
+
 
                     </div>
 

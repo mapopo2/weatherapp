@@ -140,7 +140,7 @@ app.post("/weather", async (req, res) =>  {
             let dayTomorrow = tomorrow.toLocaleDateString("en-GB", options2);
             let secondDay = secondDayAfter.toLocaleDateString("en-GB", options2);
             let thirdDay = thirdDayAfter.toLocaleDateString("en-GB", options2);
-
+            
         
             console.log(dayTomorrow + " " + secondDay + " " + thirdDay);
              // Weather API - Get todays date (already done) then ADD 1,2, 3 to get 3 days of weather 
@@ -198,6 +198,7 @@ app.post("/weather", async (req, res) =>  {
         } 
             
 });
+
 
 
 app.listen(port, () => {

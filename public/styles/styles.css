@@ -144,9 +144,6 @@ img {
     font-size: 4rem;
 }
 
-.todays-mini-wc-text {
-    font-size: 3rem;
-}
 
 #detailed-weather-forecast {
     animation: fadeInAnimation ease 12s;
@@ -160,10 +157,11 @@ img {
 
 .mini-weather-cards {
     text-align: center;
-   
 }
+
 .mini-weather-card {
     width: 11rem;
+    /* height: 15rem; */
     margin: 0 1rem;
     background-color: #424769;
     font-size: 0.7rem;
@@ -171,6 +169,7 @@ img {
     border-radius: 0.2rem;
     display: inline-block;
 }
+
 .mini-weather-card-description {
     font-size: 1rem;
     border-top: 0.1rem solid #DDDDDD;
@@ -199,16 +198,39 @@ img {
     width: 16rem;
     display: flex;
     text-align: center;
-    padding: 0.1rem;
     background-color: #424769;
     border-radius: 0.2rem;
     margin: 0.6rem;
     display: inline-block;   
 }
 
-.weather {
-    height: 50rem;
+.todays-mini-wc-text {
+    font-size: 3rem;
 }
+
+/* .weather {
+    height: 50rem;
+} */
+/* 
+.humidity {
+    overflow: hidden;
+    height: 11rem;
+} */
+
+#humidity-bar {
+    /* padding-right: 10px; */
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* progress::-webkit-progress-value {
+    background-color: orange;
+} */
+/* Need to select particular part of the progress element. Here, selecting the 'value'
+which is shown by filling the progress bar.
+You have to work with the kit of HTML5 progress bar.
+These are currently the entire selectors for styling HTML5
+ progress bar: https://stackoverflow.com/questions/42290719/custom-styling-progress-bar-in-css */
 
 .cloud { 
     width: 5rem;
