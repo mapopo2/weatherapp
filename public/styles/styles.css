@@ -46,7 +46,6 @@ body {
     font-size: 1rem;
 }
 
-
 form {
     background-color: #424769;
 }
@@ -144,6 +143,9 @@ img {
     font-size: 4rem;
 }
 
+li {
+    list-style: none;
+}
 
 #detailed-weather-forecast {
     animation: fadeInAnimation ease 12s;
@@ -189,10 +191,10 @@ img {
     flex-wrap: wrap;
 }
 
-.basic-weather {
+/* .basic-weather {
     display: flex;
     flex-grow: 1;
-}
+} */
 
  .todays-mini-weather-card {
     width: 16rem;
@@ -280,8 +282,7 @@ These are currently the entire selectors for styling HTML5
 .cloud-one{
     animation: movingCloudAnimationOne ease 70s;
     animation-iteration-count: infinite;
-}
-.cloud-two{
+} .cloud-two{
     animation: movingCloudAnimationTwo ease 70s;
     animation-iteration-count: infinite;
     margin-top: 15rem;
@@ -296,12 +297,7 @@ These are currently the entire selectors for styling HTML5
 }.cloud-five{
     animation: movingCloudAnimationFive ease 70s;
     animation-iteration-count: infinite;
-    margin-top: 20rem;
-}
-
-li {
-    list-style: none;
-}
+    margin-top: 20rem; }
 
 #footer {
     width: auto;
