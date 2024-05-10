@@ -2,11 +2,6 @@ import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
 import https, { get } from "https";
-//const https = require('node:https'); 
-// const EventEmitter = require('node:events');
-// import { EventEmitter } from "node:events";
-// class MyEmitter extends EventEmitter {};
-// const myEmitter = new MyEmitter ();
 
 const app = express();
 const port = 3000;
@@ -33,8 +28,6 @@ const myAPIKey = "4c2165a091cf56966b2d0788003fc3ae";
 app.post("/weather", async (req, res) =>  {
      try {
         const cityAndCountry = req.body.place;  
-        //https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation
-        //navigator.geolocation object - is where we call the getCurrentPosition function
         function getGeolocation() {
                     return axios.get(GEO_URL, {
                         params: {
@@ -69,14 +62,6 @@ app.post("/weather", async (req, res) =>  {
                 
             
             const perm = await (getWeather());
-            //Failed to parse response: Promise resolver #<Promise> is not a function (const perm = await new Promise(getWeather());)
-            // const [acct, perm] = await Promise.all([getGeolocation(), getWeather()]);
-            //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-    
-
-            //**CURRENT ERROR MESSAGE: on page Failed to fetch activity. Please try again.
-            //in console Failed to parse response: Request failed with status code 400  */
-            //const result = JSON.stringify(perm.data);
 
             const currentIconId = JSON.stringify(perm.data.current.weather[0].icon);
             let currentIconIdString = JSON.parse(currentIconId);
@@ -94,14 +79,6 @@ app.post("/weather", async (req, res) =>  {
             const tomorrowsImageURL = "https://openweathermap.org/img/wn/" + tomorrowsIconIdString + "@2x.png";
             const secondtImageURL = "https://openweathermap.org/img/wn/" + secondIconIdString + "@2x.png";
             const thirdImageURL = "https://openweathermap.org/img/wn/" + thirdIconIdString+ "@2x.png";
-            // const image = "<img src =" + imageURL + ">"; 
-            // --------------------------OPEN WEATHER MAP ICONS! ------------------------
-            // **NOW for IMAGES: Weather API asigns different ID codes and icon names to different types of weather - want to link an image to the ID, open weather map gives you the images. See https://openweathermap.org/weather-conditions 
-
-            // const icon = weatherData.weather[0].icon;
-            //         //make an image const - REMEMBER CONCATINATION!!
-            // const imageURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
-            //         //REMEBER HTML - PASSING IMAGES etc.
 
             console.log(JSON.stringify(perm.data.current.sunrise));
             let currentDes = JSON.stringify(perm.data.current.weather[0].description);
@@ -140,12 +117,8 @@ app.post("/weather", async (req, res) =>  {
             let dayTomorrow = tomorrow.toLocaleDateString("en-GB", options2);
             let secondDay = secondDayAfter.toLocaleDateString("en-GB", options2);
             let thirdDay = thirdDayAfter.toLocaleDateString("en-GB", options2);
-
-        
+            
             console.log(dayTomorrow + " " + secondDay + " " + thirdDay);
-             // Weather API - Get todays date (already done) then ADD 1,2, 3 to get 3 days of weather 
-            //data- then match the day (get day +1, match with options (day of the week) and print).
-            // FINISH WEATHER SITE FOR THE LOVE OF GOD & everything good
             console.log(currentHours + ":" + currentMinutes);
 
                 res.render( "weather.ejs", {
@@ -184,12 +157,6 @@ app.post("/weather", async (req, res) =>  {
                     tomorrowsDescription: JSON.parse(tomorrowsDes),
                     secondDescription: JSON.parse(secondDes),
                     thirdDescription: JSON.parse(thirdDes),
-
-                    
-                    // currentTempF: celsiusToFahrenheit(perm.data.current.temp),
-                    // tempTomorrowF: celsiusToFahrenheit(perm.data.daily[0].temp.day),
-                    // secondTempF:  celsiusToFahrenheit(perm.data.daily[1].temp.day),
-                    // thridTempF:  celsiusToFahrenheit(perm.data.daily[2].temp.day),
                 });
 
         } catch (error) {
@@ -198,7 +165,6 @@ app.post("/weather", async (req, res) =>  {
         } 
             
 });
-
 
 app.listen(port, () => {
     console.log(`server listening on port ${port}`);

@@ -142,8 +142,8 @@ img {
     font-size: 4rem;
 }
 
-.todays-mini-wc-text {
-    font-size: 3rem;
+li {
+    list-style: none;
 }
 
 #detailed-weather-forecast {
@@ -157,10 +157,11 @@ img {
 
 .mini-weather-cards {
     text-align: center;
-   
 }
+
 .mini-weather-card {
     width: 11rem;
+    /* height: 15rem; */
     margin: 0 1rem;
     background-color: #424769;
     font-size: 0.7rem;
@@ -168,6 +169,7 @@ img {
     border-radius: 0.2rem;
     display: inline-block;
 }
+
 .mini-weather-card-description {
     font-size: 1rem;
     border-top: 0.1rem solid #DDDDDD;
@@ -187,24 +189,23 @@ img {
     flex-wrap: wrap;
 }
 
-.basic-weather {
-    display: flex;
-    flex-grow: 1;
-}
-
  .todays-mini-weather-card {
     width: 16rem;
     display: flex;
     text-align: center;
-    padding: 0.1rem;
     background-color: #424769;
     border-radius: 0.2rem;
     margin: 0.6rem;
     display: inline-block;   
 }
 
-.weather {
-    height: 50rem;
+.todays-mini-wc-text {
+    font-size: 3rem;
+}
+
+#humidity-bar {
+    font-size: 1rem;
+    margin: 0;
 }
 
 .cloud { 
@@ -255,8 +256,7 @@ img {
 .cloud-one{
     animation: movingCloudAnimationOne ease 70s;
     animation-iteration-count: infinite;
-}
-.cloud-two{
+} .cloud-two{
     animation: movingCloudAnimationTwo ease 70s;
     animation-iteration-count: infinite;
     margin-top: 15rem;
@@ -271,12 +271,7 @@ img {
 }.cloud-five{
     animation: movingCloudAnimationFive ease 70s;
     animation-iteration-count: infinite;
-    margin-top: 20rem;
-}
-
-li {
-    list-style: none;
-}
+    margin-top: 20rem; }
 
 #footer {
     width: auto;

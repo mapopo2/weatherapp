@@ -3,8 +3,6 @@
 
     <div id="weather-forecast"> 
         <div id="weather-forecast-card">
-                    <!-- CHANGE DISPLAY! - flexbox classes, id and order of divs in ejs file, then organising css -->
-
                     <div class="weather-card-dt-local">
                         
                         <h1 class="today-title">Today · <%=dateToday%></h1>
@@ -65,10 +63,15 @@
             </div>
 
                     <div class="todays-weather">
-                    <div class="todays-mini-weather-card">
+                    <div class="todays-mini-weather-card humidity">
                         <h3> Humidity </h2> 
                         
-                        <h1 class="todays-mini-wc-text"> <%=humidity %> %</h1>
+                        <h1 class="todays-mini-wc-text"> <%=humidity %> %
+                            <progress id="humidity-bar" name="progress" max="100" value="<%=humidity %>"></progress>
+                        </h1>
+                        
+                        <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress -->
+
 
                     </div>
 
